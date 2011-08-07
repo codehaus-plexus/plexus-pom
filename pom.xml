@@ -28,7 +28,7 @@ limitations under the License.
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus</artifactId>
   <packaging>pom</packaging>
-  <version>3.1-SNAPSHOT</version>
+  <version>3.0.1-SNAPSHOT</version>
 
   <name>Plexus</name>
   <description>The Plexus project provides a full software stack for creating and executing software projects.</description>
@@ -368,6 +368,13 @@ limitations under the License.
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.0</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.maven.wagon</groupId>
+              <artifactId>wagon-webdav-jackrabbit</artifactId>
+              <version>1.0</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
