@@ -28,7 +28,7 @@ limitations under the License.
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus</artifactId>
   <packaging>pom</packaging>
-  <version>3.0.1-SNAPSHOT</version>
+  <version>3.0.1</version>
 
   <name>Plexus</name>
   <description>The Plexus project provides a full software stack for creating and executing software projects.</description>
