@@ -286,6 +286,12 @@ limitations under the License.
     <site>
       <id>codehaus.org</id>
       <url>dav:https://dav.codehaus.org/plexus</url>
+      <!--
+       dav.codehaus.org requires a specific CA
+       see http://docs.codehaus.org/display/HAUSMATES/Installing+a+new+CA+into+the+JDK
+       to avoid following failure:
+       javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      -->
     </site>
   </distributionManagement>
 
