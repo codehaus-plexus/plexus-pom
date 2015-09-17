@@ -285,7 +285,7 @@ limitations under the License.
     </snapshotRepository>
     <site>
       <id>github</id>
-      <url>scm:git:git@github.com:codehaus-plexus/plexus-pom.git</url>
+      <url>scm:git:git@github.com:codehaus-plexus</url>
     </site>
   </distributionManagement>
 
@@ -391,7 +391,7 @@ limitations under the License.
           <artifactId>maven-scm-publish-plugin</artifactId>
           <version>1.1</version>
           <configuration>
-            <pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
+            <pubScmUrl>${project.scm.developerConnection}/plexus-pom.git</pubScmUrl>
             <scmBranch>gh-pages</scmBranch>
           </configuration>
         </plugin>
