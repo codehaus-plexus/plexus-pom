@@ -294,6 +294,9 @@ limitations under the License.
   </prerequisites>
 
   <properties>
+    <javaVersion>5</javaVersion>
+    <maven.compiler.source>1.${javaVersion}</maven.compiler.source>
+    <maven.compiler.target>1.${javaVersion}</maven.compiler.target>    
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <plexusDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/plexus-snapshots</plexusDistMgmtSnapshotsUrl>
   </properties>
@@ -332,8 +335,8 @@ limitations under the License.
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.2</version>
           <configuration>
-            <source>1.5</source>
-            <target>1.5</target>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
           </configuration>
         </plugin>
         <plugin>
@@ -505,7 +508,7 @@ limitations under the License.
             <artifactId>maven-pmd-plugin</artifactId>
             <version>3.2</version>
             <configuration>
-              <targetJdk>1.5</targetJdk>
+              <targetJdk>${maven.compiler.source}</targetJdk>
               <rulesets>
                 <ruleset>rulesets/maven.xml</ruleset>
               </rulesets>
