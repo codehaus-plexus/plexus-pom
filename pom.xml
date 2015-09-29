@@ -333,7 +333,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.2</version>
+          <version>3.3</version>
           <configuration>
             <source>${maven.compiler.source}</source>
             <target>${maven.compiler.target}</target>
@@ -521,7 +521,7 @@ limitations under the License.
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>findbugs-maven-plugin</artifactId>
-            <version>2.5.2</version>
+            <version>3.0.2</version>
           </plugin>
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
