@@ -230,7 +230,14 @@ limitations under the License.
         <role>Developer</role>
       </roles>
     </developer>
-
+    <developer>
+      <name>Andreas Gudian</name>
+      <id>agudian</id>
+      <email>agudian@apache.org</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
   </developers>
 
   <mailingLists><!-- TODO decide what we do with mailing lists now -->
