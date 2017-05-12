@@ -246,6 +246,14 @@ limitations under the License.
         <role>Developer</role>
       </roles>
     </developer>
+    <developer>
+      <name>Michael Osipov</name>
+      <id>michael-o</id>
+      <email>1983-01-06@gmx.net</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
   </developers>
 
   <mailingLists><!-- TODO decide what we do with mailing lists now -->
