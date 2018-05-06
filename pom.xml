@@ -339,6 +339,15 @@ limitations under the License.
         <!-- set versions of common plugins for reproducibility, ordered alphabetically -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.17</version>
+          <configuration>
+            <configLocation>config/maven_checks.xml</configLocation>
+            <headerLocation>https://raw.github.com/codehaus-plexus/plexus-pom/master/src/main/resources/config/plexus-header.txt</headerLocation>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
@@ -380,6 +389,21 @@ limitations under the License.
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-plugin</artifactId>
           <version>3.5.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>3.8</version>
+          <configuration>
+            <targetJdk>${maven.compiler.source}</targetJdk>
+            <rulesets>
+              <ruleset>rulesets/maven.xml</ruleset>
+            </rulesets>
+            <excludeRoots>
+              <excludeRoot>${project.build.directory}/generated-sources/modello</excludeRoot>
+              <excludeRoot>${project.build.directory}/generated-sources/plugin</excludeRoot>
+            </excludeRoots>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -534,11 +558,6 @@ limitations under the License.
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>2.17</version>
-            <configuration>
-              <configLocation>config/maven_checks.xml</configLocation>
-              <headerLocation>https://raw.github.com/codehaus-plexus/plexus-pom/master/src/main/resources/config/plexus-header.txt</headerLocation>
-            </configuration>
             <reportSets>
               <reportSet>
                 <id>default</id>
@@ -551,17 +570,6 @@ limitations under the License.
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-pmd-plugin</artifactId>
-            <version>3.8</version>
-            <configuration>
-              <targetJdk>${maven.compiler.source}</targetJdk>
-              <rulesets>
-                <ruleset>rulesets/maven.xml</ruleset>
-              </rulesets>
-              <excludeRoots>
-                <excludeRoot>${project.build.directory}/generated-sources/modello</excludeRoot>
-                <excludeRoot>${project.build.directory}/generated-sources/plugin</excludeRoot>
-              </excludeRoots>
-            </configuration>
           </plugin>
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
