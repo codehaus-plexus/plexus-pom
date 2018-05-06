@@ -53,6 +53,7 @@
         <item name="Plexus Interactivity" href="/plexus-interactivity/"/>
         <item name="Plexus Interpolation" href="/plexus-interpolation/"/>
         <item name="Plexus IO"            href="/plexus-io/"/>
+        <item name="Plexus Languages"     href="/plexus-languages/"/>
         <item name="Plexus Resources"     href="/plexus-resources/"/>
         <item name="Plexus Swizzle"       href="/plexus-swizzle/"/>
         <item name="Plexus Velocity"      href="/plexus-velocity/"/>
