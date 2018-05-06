@@ -1,0 +1,11 @@
+ -----
+ Plexus Parent POM
+ -----
+ Hervé Boutemy
+ -----
+ 2018-05-06
+ -----
+
+Plexus Parent POM
+
+  Plexus Parent POM defines common {{{./plugin-management.html}plugins}}, reporting and release configuration.
