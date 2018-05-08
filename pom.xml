@@ -22,7 +22,7 @@ limitations under the License.
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus</artifactId>
   <packaging>pom</packaging>
-  <version>5.1-SNAPSHOT</version>
+  <version>5.1</version>
 
   <name>Plexus</name>
   <description>The Plexus project provides a full software stack for creating and executing software projects.</description>
@@ -282,7 +282,7 @@ limitations under the License.
     <connection>scm:git:git@github.com:codehaus-plexus/plexus-pom.git</connection>
     <developerConnection>scm:git:git@github.com:codehaus-plexus/plexus-pom.git</developerConnection>
     <url>http://github.com/codehaus-plexus/plexus-pom/tree/${project.scm.tag}/</url>
-    <tag>master</tag>
+    <tag>plexus-5.1</tag>
   </scm>
   <issueManagement>
     <system>github</system>
