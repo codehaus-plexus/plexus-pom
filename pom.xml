@@ -247,6 +247,14 @@ limitations under the License.
         <role>Developer</role>
       </roles>
     </developer>
+    <developer>
+      <name>Gabriel Belingueres</name>
+      <id>belingueres</id>
+      <email>belingueres@gmail.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
   </developers>
 
   <mailingLists><!-- TODO decide what we do with mailing lists now -->
@@ -512,7 +520,15 @@ limitations under the License.
     </pluginManagement>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>animal-sniffer-enforcer-rule</artifactId>
+            <version>1.17</version>
+          </dependency>
+        </dependencies>
         <executions>
           <execution>
             <id>enforce-maven</id>
@@ -526,6 +542,24 @@ limitations under the License.
                   <message>This project requires at least Maven 3.0.5</message>
                 </requireMavenVersion>
             </rules>
+            </configuration>
+          </execution>
+          <execution>
+            <id>check-signatures</id>
+            <phase>test</phase>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <checkSignatureRule implementation="org.codehaus.mojo.animal_sniffer.enforcer.CheckSignatureRule">
+                  <signature>
+                    <groupId>org.codehaus.mojo.signature</groupId>
+                    <artifactId>java16</artifactId>
+                    <version>1.1</version>
+                  </signature>
+                </checkSignatureRule>
+              </rules>
             </configuration>
           </execution>
         </executions>
