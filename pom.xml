@@ -555,7 +555,7 @@ limitations under the License.
                 <checkSignatureRule implementation="org.codehaus.mojo.animal_sniffer.enforcer.CheckSignatureRule">
                   <signature>
                     <groupId>org.codehaus.mojo.signature</groupId>
-                    <artifactId>java16</artifactId>
+                    <artifactId>java1${javaVersion}</artifactId>
                     <version>1.1</version>
                   </signature>
                 </checkSignatureRule>
