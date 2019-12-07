@@ -22,7 +22,7 @@ limitations under the License.
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus</artifactId>
   <packaging>pom</packaging>
-  <version>5.2-SNAPSHOT</version>
+  <version>6.0-SNAPSHOT</version>
 
   <name>Plexus</name>
   <description>The Plexus project provides a full software stack for creating and executing software projects.</description>
@@ -306,7 +306,7 @@ limitations under the License.
   </distributionManagement>
 
   <properties>
-    <javaVersion>6</javaVersion>
+    <javaVersion>7</javaVersion>
     <maven.compiler.source>1.${javaVersion}</maven.compiler.source>
     <maven.compiler.target>1.${javaVersion}</maven.compiler.target>    
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
