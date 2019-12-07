@@ -341,7 +341,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.0.0</version>
           <configuration>
             <configLocation>config/maven_checks.xml</configLocation>
             <headerLocation>https://raw.github.com/codehaus-plexus/plexus-pom/master/src/main/resources/config/plexus-header.txt</headerLocation>
