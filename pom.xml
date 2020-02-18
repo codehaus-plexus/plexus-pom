@@ -707,7 +707,7 @@ limitations under the License.
       </build>
     </profile>
     <profile>
-      <id>java7-or-archeological-build</id>
+      <id>pre-JEP_247</id>
       <activation>
         <jdk>[7,8]</jdk>
       </activation>
