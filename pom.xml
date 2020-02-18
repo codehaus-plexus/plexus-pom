@@ -708,6 +708,9 @@ limitations under the License.
     </profile>
     <profile>
       <id>java7-or-archeological-build</id>
+      <activation>
+        <jdk>[7,8]</jdk>
+      </activation>
       <build>
         <plugins>
           <plugin>
