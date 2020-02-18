@@ -26,11 +26,11 @@ limitations under the License.
 
   <name>Plexus</name>
   <description>The Plexus project provides a full software stack for creating and executing software projects.</description>
-  <url>http://codehaus-plexus.github.io/</url>
+  <url>https://codehaus-plexus.github.io/</url>
   <inceptionYear>2001</inceptionYear>
   <organization>
     <name>Codehaus Plexus</name>
-    <url>http://codehaus-plexus.github.io/</url>
+    <url>https://codehaus-plexus.github.io/</url>
   </organization>
   <licenses>
     <license>
@@ -289,12 +289,12 @@ limitations under the License.
   <scm>
     <connection>scm:git:git@github.com:codehaus-plexus/plexus-pom.git</connection>
     <developerConnection>scm:git:git@github.com:codehaus-plexus/plexus-pom.git</developerConnection>
-    <url>http://github.com/codehaus-plexus/plexus-pom/tree/${project.scm.tag}/</url>
+    <url>https://github.com/codehaus-plexus/plexus-pom/tree/${project.scm.tag}/</url>
     <tag>master</tag>
   </scm>
   <issueManagement>
     <system>github</system>
-    <url>http://github.com/codehaus-plexus/plexus-pom/issues</url>
+    <url>https://github.com/codehaus-plexus/plexus-pom/issues</url>
   </issueManagement>
   <distributionManagement>
     <repository>
