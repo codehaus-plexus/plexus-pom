@@ -22,7 +22,7 @@ limitations under the License.
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus</artifactId>
   <packaging>pom</packaging>
-  <version>6.2</version>
+  <version>6.3-SNAPSHOT</version>
 
   <name>Plexus</name>
   <description>The Plexus project provides a full software stack for creating and executing software projects.</description>
@@ -290,7 +290,7 @@ limitations under the License.
     <connection>scm:git:git@github.com:codehaus-plexus/plexus-pom.git</connection>
     <developerConnection>scm:git:git@github.com:codehaus-plexus/plexus-pom.git</developerConnection>
     <url>https://github.com/codehaus-plexus/plexus-pom/tree/${project.scm.tag}/</url>
-    <tag>plexus-6.2</tag>
+    <tag>master</tag>
   </scm>
   <issueManagement>
     <system>github</system>
@@ -319,7 +319,7 @@ limitations under the License.
     <maven.compiler.target>1.${javaVersion}</maven.compiler.target>    
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <plexusDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/plexus-snapshots</plexusDistMgmtSnapshotsUrl>
-    <project.build.outputTimestamp>2020-02-19T00:21:41Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2020-02-19T00:22:02Z</project.build.outputTimestamp>
   </properties>
 
   <dependencyManagement>
