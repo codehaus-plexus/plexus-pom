@@ -20,7 +20,7 @@ under the License.
 <rss version="0.91">
   <channel>
     <title>Plexus - Checkstyle report</title>
-    <link>http://codehaus-plexus.github.io/</link>
+    <link>https://codehaus-plexus.github.io/</link>
     <description>Plexus - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2001 - 2020 Codehaus Plexus</copyright>
@@ -30,9 +30,9 @@ under the License.
              Warnings: 0,
              Infos: 0
       </title>
-            <link>http://codehaus-plexus.github.io//checkstyle.html</link>
+            <link>https://codehaus-plexus.github.io//checkstyle.html</link>
       <description>
-        <p>Click <a href="http://codehaus-plexus.github.io//checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://codehaus-plexus.github.io//checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
