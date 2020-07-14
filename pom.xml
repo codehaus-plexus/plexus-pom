@@ -320,6 +320,7 @@ limitations under the License.
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <plexusDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/plexus-snapshots</plexusDistMgmtSnapshotsUrl>
     <project.build.outputTimestamp>2020-02-19T00:22:02Z</project.build.outputTimestamp>
+    <gpg.useagent>true</gpg.useagent>
   </properties>
 
   <dependencyManagement>
