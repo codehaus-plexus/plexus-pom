@@ -355,17 +355,23 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.1.2</version>
           <configuration>
             <configLocation>config/maven_checks.xml</configLocation>
             <headerLocation>https://raw.github.com/codehaus-plexus/plexus-pom/master/src/main/resources/config/plexus-header.txt</headerLocation>
           </configuration>
           <dependencies>
+            <!-- can be removed with update to 3.2.x -->
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>8.41.1</version>
+            </dependency>
             <!-- MCHECKSTYLE-327: the maven_checks.xml was moved to a shared project -->
             <dependency>
               <groupId>org.apache.maven.shared</groupId>
               <artifactId>maven-shared-resources</artifactId>
-              <version>2</version>
+              <version>3</version>
             </dependency>
           </dependencies>
         </plugin>
