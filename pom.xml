@@ -374,7 +374,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version>
+          <version>3.10.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -743,7 +743,7 @@ limitations under the License.
               <dependency>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>animal-sniffer-enforcer-rule</artifactId>
-                <version>1.20</version>
+                <version>1.21</version>
               </dependency>
             </dependencies>
             <executions>
