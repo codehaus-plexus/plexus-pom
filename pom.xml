@@ -439,12 +439,11 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>3.0.0-M5</version>
+          <version>3.0.0-M6</version>
           <configuration>
             <goals>deploy</goals>
             <mavenExecutorId>forked-path</mavenExecutorId>
-            <useReleaseProfile>false</useReleaseProfile>
-            <arguments>-Pplexus-release</arguments>
+            <releaseProfiles>plexus-release</releaseProfiles>
           </configuration>
         </plugin>
         <plugin>
