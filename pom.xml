@@ -257,32 +257,17 @@ limitations under the License.
     </developer>
   </developers>
 
-  <mailingLists><!-- TODO decide what we do with mailing lists now -->
-    <mailingList>
-      <name>Plexus User List</name>
-      <subscribe>http://xircles.codehaus.org/manage_email/user%40plexus.codehaus.org</subscribe>
-      <unsubscribe>http://xircles.codehaus.org/manage_email/user%40plexus.codehaus.org</unsubscribe>
-      <archive>http://archive.plexus.codehaus.org/user</archive>
-      <post>user@plexus.codehaus.org</post>
+  <mailingLists>
+     <mailingList>
+      <name>Plexus and MojoHaus Development List</name>
+      <subscribe>mojohaus-dev+subscribe@googlegroups.com</subscribe>
+      <unsubscribe>mojohaus-dev+unsubscribe@googlegroups.com</unsubscribe>
+      <post>mojohaus-dev@googlegroups.com</post>
+      <archive>https://groups.google.com/forum/#!forum/mojohaus-dev</archive>
     </mailingList>
     <mailingList>
-      <name>Plexus Developer List</name>
-      <subscribe>http://xircles.codehaus.org/manage_email/dev%40plexus.codehaus.org</subscribe>
-      <unsubscribe>http://xircles.codehaus.org/manage_email/dev%40plexus.codehaus.org</unsubscribe>
-      <archive>http://archive.plexus.codehaus.org/dev</archive>
-      <post>dev@plexus.codehaus.org</post>
-    </mailingList>
-    <mailingList>
-      <name>Plexus Announce List</name>
-      <subscribe>http://xircles.codehaus.org/manage_email/announce%40plexus.codehaus.org</subscribe>
-      <unsubscribe>http://xircles.codehaus.org/manage_email/announce%40plexus.codehaus.org</unsubscribe>
-      <archive>http://archive.plexus.codehaus.org/announce</archive>
-    </mailingList>
-    <mailingList>
-      <name>Plexus Commit List</name>
-      <subscribe>http://xircles.codehaus.org/manage_email/scm%40plexus.codehaus.org</subscribe>
-      <unsubscribe>http://xircles.codehaus.org/manage_email/scm%40plexus.codehaus.org</unsubscribe>
-      <archive>http://archive.plexus.codehaus.org/scm</archive>
+      <name>Former (pre-2015-06) Development List</name>
+      <archive>https://markmail.org/list/org.codehaus.plexus.dev</archive>
     </mailingList>
   </mailingLists>
 
