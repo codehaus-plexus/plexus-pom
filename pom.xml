@@ -255,6 +255,14 @@ limitations under the License.
         <role>Developer</role>
       </roles>
     </developer>
+    <developer>
+      <name>Konrad Windszus</name>
+      <id>kwin</id>
+      <email>kwin@apache.org</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
   </developers>
 
   <mailingLists><!-- TODO decide what we do with mailing lists now -->
