@@ -314,6 +314,7 @@ limitations under the License.
     <plexusDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/plexus-snapshots</plexusDistMgmtSnapshotsUrl>
     <project.build.outputTimestamp>2022-06-09T20:48:10Z</project.build.outputTimestamp>
     <gpg.useagent>true</gpg.useagent>
+    <mavenPluginToolsVersion>3.7.0</mavenPluginToolsVersion>
   </properties>
 
   <dependencyManagement>
@@ -323,6 +324,12 @@ limitations under the License.
         <artifactId>plexus-component-annotations</artifactId>
         <version>2.1.1</version>
         <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.plugin-tools</groupId>
+        <artifactId>maven-plugin-annotations</artifactId>
+        <version>${mavenPluginToolsVersion}</version>
+        <scope>provided</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -407,7 +414,27 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-plugin</artifactId>
-          <version>3.6.4</version>
+          <version>${mavenPluginToolsVersion}</version>
+          <executions>
+            <execution>
+              <id>default-descriptor</id>
+              <phase>process-classes</phase>
+              <configuration>
+                <internalJavadocBaseUrl>./apidocs/</internalJavadocBaseUrl>
+              </configuration>
+            </execution>
+            <execution>
+              <id>generate-helpmojo</id>
+              <goals>
+                <goal>helpmojo</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-plugin-report-plugin</artifactId>
+          <version>${mavenPluginToolsVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
