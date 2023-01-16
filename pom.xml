@@ -314,7 +314,7 @@ limitations under the License.
     <plexusDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/plexus-snapshots</plexusDistMgmtSnapshotsUrl>
     <project.build.outputTimestamp>2022-06-09T20:48:10Z</project.build.outputTimestamp>
     <gpg.useagent>true</gpg.useagent>
-    <mavenPluginToolsVersion>3.7.0</mavenPluginToolsVersion>
+    <mavenPluginToolsVersion>3.7.1</mavenPluginToolsVersion>
   </properties>
 
   <dependencyManagement>
