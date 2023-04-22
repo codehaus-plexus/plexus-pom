@@ -320,12 +320,6 @@ limitations under the License.
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.codehaus.plexus</groupId>
-        <artifactId>plexus-component-annotations</artifactId>
-        <version>2.1.1</version>
-        <scope>compile</scope>
-      </dependency>
-      <dependency>
         <groupId>org.apache.maven.plugin-tools</groupId>
         <artifactId>maven-plugin-annotations</artifactId>
         <version>${mavenPluginToolsVersion}</version>
