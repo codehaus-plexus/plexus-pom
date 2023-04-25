@@ -500,11 +500,6 @@ limitations under the License.
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
-          <artifactId>findbugs-maven-plugin</artifactId>
-          <version>3.0.5</version>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
           <artifactId>taglist-maven-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
@@ -623,10 +618,6 @@ limitations under the License.
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-pmd-plugin</artifactId>
-          </plugin>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
           </plugin>
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
