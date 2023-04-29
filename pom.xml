@@ -537,8 +537,8 @@ limitations under the License.
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>3.0.5</version>
-                  <message>This project requires at least Maven 3.0.5</message>
+                  <version>3.2.5</version>
+                  <message>This project requires at least Maven 3.2.5</message>
                 </requireMavenVersion>
             </rules>
             </configuration>
