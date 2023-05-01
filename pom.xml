@@ -26,7 +26,7 @@ limitations under the License.
 
   <name>Plexus</name>
   <description>The Plexus project provides a full software stack for creating and executing software projects.</description>
-  <url>https://codehaus-plexus.github.io/</url>
+  <url>https://codehaus-plexus.github.io/plexus-pom/</url>
   <inceptionYear>2001</inceptionYear>
   <organization>
     <name>Codehaus Plexus</name>
@@ -280,15 +280,17 @@ limitations under the License.
   </mailingLists>
 
   <scm>
-    <connection>scm:git:git@github.com:codehaus-plexus/plexus-pom.git</connection>
-    <developerConnection>scm:git:git@github.com:codehaus-plexus/plexus-pom.git</developerConnection>
-    <url>https://github.com/codehaus-plexus/plexus-pom/tree/${project.scm.tag}/</url>
+    <connection>scm:git:https://github.com/codehaus-plexus/plexus-pom.git</connection>
+    <developerConnection>${project.scm.connection}</developerConnection>
+    <url>https://github.com/codehaus-plexus/plexus-pom/tree/master/</url>
     <tag>master</tag>
   </scm>
+
   <issueManagement>
     <system>github</system>
     <url>https://github.com/codehaus-plexus/plexus-pom/issues</url>
   </issueManagement>
+
   <distributionManagement>
     <repository>
       <id>plexus-releases</id>
@@ -300,9 +302,10 @@ limitations under the License.
       <name>Plexus Snapshot Repository</name>
       <url>${plexusDistMgmtSnapshotsUrl}</url>
     </snapshotRepository>
+    <!-- site distribution management must be override in child projects -->
     <site>
       <id>github:gh-pages</id>
-      <url>scm:git:git@github.com:codehaus-plexus</url><!-- url used only for inheritance -->
+      <url>${project.scm.developerConnection}</url>
     </site>
   </distributionManagement>
 
@@ -315,6 +318,7 @@ limitations under the License.
     <project.build.outputTimestamp>2022-06-09T20:48:10Z</project.build.outputTimestamp>
     <gpg.useagent>true</gpg.useagent>
     <mavenPluginToolsVersion>3.8.2</mavenPluginToolsVersion>
+    <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
   </properties>
 
   <dependencyManagement>
