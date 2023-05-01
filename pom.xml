@@ -411,6 +411,10 @@ limitations under the License.
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>3.5.0</version>
+          <configuration>
+            <quiet>true</quiet>
+            <locale>en</locale>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -651,18 +655,11 @@ limitations under the License.
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-              <detectLinks>true</detectLinks>
-              <links>
-                <link>http://junit.sourceforge.net/javadoc/</link>
-              </links>
-            </configuration>
             <reportSets>
               <reportSet>
                 <id>default</id>
                 <reports>
                   <report>javadoc</report>
-                  <report>test-javadoc</report>
                 </reports>
               </reportSet>
             </reportSets>
