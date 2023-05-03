@@ -327,6 +327,7 @@ limitations under the License.
     <gpg.useagent>true</gpg.useagent>
     <mavenPluginToolsVersion>3.8.2</mavenPluginToolsVersion>
     <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
+    <junit5Version>5.9.3</junit5Version>
   </properties>
 
   <dependencyManagement>
@@ -336,6 +337,13 @@ limitations under the License.
         <artifactId>maven-plugin-annotations</artifactId>
         <version>${mavenPluginToolsVersion}</version>
         <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${junit5Version}</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
