@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
 Copyright The Codehaus Foundation.
 
@@ -15,14 +14,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus</artifactId>
-  <packaging>pom</packaging>
   <version>11-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
   <name>Plexus</name>
   <description>The Plexus project provides a full software stack for creating and executing software projects.</description>
@@ -120,160 +118,160 @@ limitations under the License.
       </roles>
     </developer>
     <developer>
-      <name>Trygve Laugstøl</name>
       <id>trygvis</id>
+      <name>Trygve Laugstøl</name>
       <email>trygvis@codehaus.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Kenney Westerhof</name>
       <id>kenney</id>
+      <name>Kenney Westerhof</name>
       <email>kenney@codehaus.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Carlos Sanchez</name>
       <id>carlos</id>
+      <name>Carlos Sanchez</name>
       <email>carlos@codehaus.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Brett Porter</name>
       <id>brett</id>
+      <name>Brett Porter</name>
       <email>brett@codehaus.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>John Casey</name>
       <id>jdcasey</id>
+      <name>John Casey</name>
       <email>jdcasey@codehaus.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Andrew Williams</name>
       <id>handyande</id>
+      <name>Andrew Williams</name>
       <email>andy@handyande.co.uk</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Rahul Thakur</name>
       <id>rahul</id>
+      <name>Rahul Thakur</name>
       <email>rahul.thakur.xdev@gmail.com</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Joakim Erdfelt</name>
       <id>joakime</id>
+      <name>Joakim Erdfelt</name>
       <email>joakim@erdfelt.com</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Olivier Lamy</name>
       <id>olamy</id>
+      <name>Olivier Lamy</name>
       <email>olamy@codehaus.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Hervé Boutemy</name>
       <id>hboutemy</id>
+      <name>Hervé Boutemy</name>
       <email>hboutemy@apache.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Oleg Gusakov</name>
       <id>oleg</id>
+      <name>Oleg Gusakov</name>
       <email>olegy@codehaus.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Vincent Siveton</name>
       <id>vsiveton</id>
+      <name>Vincent Siveton</name>
       <email>vsiveton@codehaus.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Kristian Rosenvold</name>
       <id>krosenvold</id>
+      <name>Kristian Rosenvold</name>
       <email>krosenvold@apache.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Andreas Gudian</name>
       <id>agudian</id>
+      <name>Andreas Gudian</name>
       <email>agudian@apache.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Karl Heinz Marbaise</name>
       <id>khmarbaise</id>
+      <name>Karl Heinz Marbaise</name>
       <email>khmarbaise@apache.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Michael Osipov</name>
       <id>michael-o</id>
+      <name>Michael Osipov</name>
       <email>1983-01-06@gmx.net</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Gabriel Belingueres</name>
       <id>belingueres</id>
+      <name>Gabriel Belingueres</name>
       <email>belingueres@gmail.com</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Konrad Windszus</name>
       <id>kwin</id>
+      <name>Konrad Windszus</name>
       <email>kwin@apache.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Slawomir Jaranowski</name>
       <id>sjaranowski</id>
+      <name>Slawomir Jaranowski</name>
       <email>sjaranowski@apache.org</email>
       <roles>
         <role>Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Sylwester Lachiewicz</name>
       <id>slachiewicz</id>
+      <name>Sylwester Lachiewicz</name>
       <email>slachiewicz@apache.org</email>
       <organization>ASF</organization>
       <roles>
@@ -283,7 +281,7 @@ limitations under the License.
   </developers>
 
   <mailingLists>
-     <mailingList>
+    <mailingList>
       <name>Plexus and MojoHaus Development List</name>
       <subscribe>mojohaus-dev+subscribe@googlegroups.com</subscribe>
       <unsubscribe>mojohaus-dev+unsubscribe@googlegroups.com</unsubscribe>
@@ -299,8 +297,8 @@ limitations under the License.
   <scm>
     <connection>scm:git:https://github.com/codehaus-plexus/plexus-pom.git</connection>
     <developerConnection>${project.scm.connection}</developerConnection>
-    <url>https://github.com/codehaus-plexus/plexus-pom/tree/master/</url>
     <tag>master</tag>
+    <url>https://github.com/codehaus-plexus/plexus-pom/tree/master/</url>
   </scm>
 
   <issueManagement>
@@ -329,7 +327,7 @@ limitations under the License.
   <properties>
     <javaVersion>8</javaVersion>
     <maven.compiler.source>1.${javaVersion}</maven.compiler.source>
-    <maven.compiler.target>1.${javaVersion}</maven.compiler.target>    
+    <maven.compiler.target>1.${javaVersion}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <plexusDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/plexus-snapshots</plexusDistMgmtSnapshotsUrl>
     <project.build.outputTimestamp>2022-06-09T20:48:10Z</project.build.outputTimestamp>
@@ -508,7 +506,8 @@ limitations under the License.
           <artifactId>maven-site-plugin</artifactId>
           <version>3.12.1</version>
           <configuration>
-            <skipDeploy>true</skipDeploy><!-- don't deploy site with maven-site-plugin -->
+            <!-- don't deploy site with maven-site-plugin -->
+            <skipDeploy>true</skipDeploy>
           </configuration>
         </plugin>
         <plugin>
@@ -578,7 +577,7 @@ limitations under the License.
                 <enforceBytecodeVersion>
                   <maxJdkVersion>${maven.compiler.target}</maxJdkVersion>
                 </enforceBytecodeVersion>
-            </rules>
+              </rules>
             </configuration>
           </execution>
         </executions>
@@ -708,10 +707,10 @@ limitations under the License.
             <executions>
               <execution>
                 <id>source-release-assembly</id>
-                <phase>package</phase>
                 <goals>
                   <goal>single</goal>
                 </goals>
+                <phase>package</phase>
                 <configuration>
                   <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
                   <descriptorRefs>
