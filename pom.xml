@@ -372,7 +372,8 @@ limitations under the License.
           <version>3.2.2</version>
           <configuration>
             <configLocation>config/maven_checks.xml</configLocation>
-            <headerLocation>https://raw.github.com/codehaus-plexus/plexus-pom/master/src/main/resources/config/plexus-header.txt</headerLocation>
+            <!-- version from release 10 referenced by branch -->
+            <headerLocation>https://github.com/codehaus-plexus/plexus-pom/blob/plexus-10/src/main/resources/config/plexus-header.txt</headerLocation>
           </configuration>
           <dependencies>
             <!-- MCHECKSTYLE-327: the maven_checks.xml was moved to a shared project -->
