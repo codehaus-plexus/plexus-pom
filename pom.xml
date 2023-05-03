@@ -358,12 +358,6 @@ limitations under the License.
             <headerLocation>https://raw.github.com/codehaus-plexus/plexus-pom/master/src/main/resources/config/plexus-header.txt</headerLocation>
           </configuration>
           <dependencies>
-            <!-- can be removed with update to 3.2.x -->
-            <dependency>
-              <groupId>com.puppycrawl.tools</groupId>
-              <artifactId>checkstyle</artifactId>
-              <version>9.3</version>
-            </dependency>
             <!-- MCHECKSTYLE-327: the maven_checks.xml was moved to a shared project -->
             <dependency>
               <groupId>org.apache.maven.shared</groupId>
