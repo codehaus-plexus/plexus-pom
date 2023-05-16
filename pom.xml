@@ -426,7 +426,8 @@ limitations under the License.
           <configuration>
             <quiet>true</quiet>
             <locale>en</locale>
-            <notimestamp>true</notimestamp><!-- avoid noise for svn/gitpubsub -->
+            <!-- avoid noise for svn/gitpubsub -->
+            <notimestamp>true</notimestamp>
           </configuration>
         </plugin>
         <plugin>
