@@ -336,6 +336,7 @@ limitations under the License.
     <mavenPluginToolsVersion>3.8.2</mavenPluginToolsVersion>
     <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
     <junit5Version>5.9.3</junit5Version>
+    <spotless.action>check</spotless.action>
   </properties>
 
   <dependencyManagement>
@@ -580,7 +581,7 @@ limitations under the License.
             <execution>
               <id>spotless-check</id>
               <goals>
-                <goal>check</goal>
+                <goal>${spotless.action}</goal>
               </goals>
               <phase>process-sources</phase>
             </execution>
@@ -817,6 +818,28 @@ limitations under the License.
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>format-check</id>
+      <activation>
+        <property>
+          <name>!format</name>
+        </property>
+      </activation>
+      <properties>
+        <spotless.action>check</spotless.action>
+      </properties>
+    </profile>
+    <profile>
+      <id>format</id>
+      <activation>
+        <property>
+          <name>format</name>
+        </property>
+      </activation>
+      <properties>
+        <spotless.action>apply</spotless.action>
+      </properties>
     </profile>
   </profiles>
 </project>
