@@ -333,7 +333,7 @@ limitations under the License.
     <project.build.outputTimestamp>2023-05-06T22:13:46Z</project.build.outputTimestamp>
     <gpg.useagent>true</gpg.useagent>
     <spotless-maven-plugin.version>2.36.0</spotless-maven-plugin.version>
-    <mavenPluginToolsVersion>3.8.2</mavenPluginToolsVersion>
+    <mavenPluginToolsVersion>3.9.0</mavenPluginToolsVersion>
     <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
     <junit5Version>5.9.3</junit5Version>
     <spotless.action>check</spotless.action>
@@ -364,7 +364,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.6.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -463,7 +463,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.20.0</version>
+          <version>3.21.0</version>
           <configuration>
             <targetJdk>${maven.compiler.source}</targetJdk>
             <rulesets>
