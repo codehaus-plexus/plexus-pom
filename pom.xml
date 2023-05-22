@@ -278,6 +278,15 @@ limitations under the License.
         <role>Developer</role>
       </roles>
     </developer>
+    <developer>
+      <id>gnodet</id>
+      <name>Guillaume Nodet</name>
+      <email>gnodet@apache.org</email>
+      <organization>ASF</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
   </developers>
 
   <mailingLists>
