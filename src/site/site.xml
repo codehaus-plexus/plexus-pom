@@ -71,6 +71,7 @@
         <item name="Plexus Components"    href="../plexus-components/"/>
       </item>
       <item name="Plexus Utils"           href="../plexus-utils/" />
+      <item name="Plexus XML"           href="../plexus-xml/" />
     </menu>
   </body>
 </project>
