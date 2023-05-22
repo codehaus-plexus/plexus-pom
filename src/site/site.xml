@@ -39,7 +39,6 @@
 
   <body>
     <breadcrumbs>
-      <item name="Plexus" href="../"/>
     </breadcrumbs>
 
     <menu name="Overview">
@@ -67,10 +66,11 @@
         <item name="Plexus Velocity"      href="../plexus-velocity/"/>
       </item>
       <item name="Plexus Parent POMs">
-        <item name="Plexus"               href="/"/>
+        <item name="Plexus"               href="../plexus-pom/"/>
         <item name="Plexus Components"    href="../plexus-components/"/>
       </item>
       <item name="Plexus Utils"           href="../plexus-utils/" />
+      <item name="Plexus XML"           href="../plexus-xml/" />
     </menu>
   </body>
 </project>
