@@ -39,7 +39,6 @@
 
   <body>
     <breadcrumbs>
-      <item name="Plexus" href="../"/>
     </breadcrumbs>
 
     <menu name="Overview">
