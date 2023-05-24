@@ -39,6 +39,8 @@
 
   <body>
     <breadcrumbs>
+      <item name="Plexus" href="https://codehaus-plexus.github.io/"/>
+      <item name="Parent POM" href="https://codehaus-plexus.github.io/plexus-pom"/>
     </breadcrumbs>
 
     <menu name="Overview">
@@ -49,28 +51,28 @@
     <menu ref="reports" inherit="bottom" />
 
     <menu name="Plexus Projects" inherit="bottom">
-      <item name="Modello"                href="../modello/" />
-      <item name="Plexus Classworlds"     href="../plexus-classworlds/" />
+      <item name="Modello"                href="https://codehaus-plexus.github.io/modello/" />
+      <item name="Plexus Classworlds"     href="https://codehaus-plexus.github.io/plexus-classworlds/" />
       <item name="Plexus Components">
-        <item name="Plexus Archiver"      href="../plexus-archiver/"/>
-        <item name="Plexus CLI"           href="../plexus-cli/"/>
-        <item name="Plexus Compiler"      href="../plexus-compiler/"/>
-        <item name="Plexus Digest"        href="../plexus-digest/"/>
-        <item name="Plexus i18n"          href="../plexus-i18n/"/>
-        <item name="Plexus Interactivity" href="../plexus-interactivity/"/>
-        <item name="Plexus Interpolation" href="../plexus-interpolation/"/>
-        <item name="Plexus IO"            href="../plexus-io/"/>
-        <item name="Plexus Languages"     href="../plexus-languages/"/>
-        <item name="Plexus Resources"     href="../plexus-resources/"/>
-        <item name="Plexus Swizzle"       href="../plexus-swizzle/"/>
-        <item name="Plexus Velocity"      href="../plexus-velocity/"/>
+        <item name="Plexus Archiver"      href="https://codehaus-plexus.github.io/plexus-archiver/"/>
+        <item name="Plexus CLI"           href="https://codehaus-plexus.github.io/plexus-cli/"/>
+        <item name="Plexus Compiler"      href="https://codehaus-plexus.github.io/plexus-compiler/"/>
+        <item name="Plexus Digest"        href="https://codehaus-plexus.github.io/plexus-digest/"/>
+        <item name="Plexus i18n"          href="https://codehaus-plexus.github.io/plexus-i18n/"/>
+        <item name="Plexus Interactivity" href="https://codehaus-plexus.github.io/plexus-interactivity/"/>
+        <item name="Plexus Interpolation" href="https://codehaus-plexus.github.io/plexus-interpolation/"/>
+        <item name="Plexus IO"            href="https://codehaus-plexus.github.io/plexus-io/"/>
+        <item name="Plexus Languages"     href="https://codehaus-plexus.github.io/plexus-languages/"/>
+        <item name="Plexus Resources"     href="https://codehaus-plexus.github.io/plexus-resources/"/>
+        <item name="Plexus Swizzle"       href="https://codehaus-plexus.github.io/plexus-swizzle/"/>
+        <item name="Plexus Velocity"      href="https://codehaus-plexus.github.io/plexus-velocity/"/>
       </item>
       <item name="Plexus Parent POMs">
-        <item name="Plexus"               href="../plexus-pom/"/>
-        <item name="Plexus Components"    href="../plexus-components/"/>
+        <item name="Plexus"               href="https://codehaus-plexus.github.io/plexus-pom/"/>
+        <item name="Plexus Components"    href="https://codehaus-plexus.github.io/plexus-components/"/>
       </item>
-      <item name="Plexus Utils"           href="../plexus-utils/" />
-      <item name="Plexus XML"           href="../plexus-xml/" />
+      <item name="Plexus Utils"           href="https://codehaus-plexus.github.io/plexus-utils/" />
+      <item name="Plexus XML"             href="https://codehaus-plexus.github.io/plexus-xml/" />
     </menu>
   </body>
 </project>

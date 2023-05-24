@@ -307,7 +307,7 @@ limitations under the License.
     <connection>scm:git:https://github.com/codehaus-plexus/plexus-pom.git</connection>
     <developerConnection>${project.scm.connection}</developerConnection>
     <tag>master</tag>
-    <url>https://github.com/codehaus-plexus/plexus-pom/tree/master/</url>
+    <url>https://github.com/codehaus-plexus/plexus-pom/tree/${project.scm.tag}/</url>
   </scm>
 
   <issueManagement>
