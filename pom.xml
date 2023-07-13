@@ -546,11 +546,6 @@ limitations under the License.
           <version>${mavenSurefireVersion}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-failsafe-report-plugin</artifactId>
-          <version>${mavenSurefireVersion}</version>
-        </plugin>
-        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>taglist-maven-plugin</artifactId>
           <version>3.0.0</version>
