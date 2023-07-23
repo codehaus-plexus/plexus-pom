@@ -19,7 +19,7 @@ limitations under the License.
 
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus</artifactId>
-  <version>14-SNAPSHOT</version>
+  <version>14</version>
   <packaging>pom</packaging>
 
   <name>Plexus</name>
@@ -306,7 +306,7 @@ limitations under the License.
   <scm>
     <connection>scm:git:https://github.com/codehaus-plexus/plexus-pom.git</connection>
     <developerConnection>${project.scm.connection}</developerConnection>
-    <tag>master</tag>
+    <tag>plexus-14</tag>
     <url>https://github.com/codehaus-plexus/plexus-pom/tree/${project.scm.tag}/</url>
   </scm>
 
@@ -339,7 +339,7 @@ limitations under the License.
     <maven.compiler.target>${javaVersion}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <plexusDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/plexus-snapshots</plexusDistMgmtSnapshotsUrl>
-    <project.build.outputTimestamp>2023-05-22T15:02:18Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2023-07-23T09:58:05Z</project.build.outputTimestamp>
     <gpg.useagent>true</gpg.useagent>
     <spotless-maven-plugin.version>2.38.0</spotless-maven-plugin.version>
     <mavenPluginToolsVersion>3.9.0</mavenPluginToolsVersion>
