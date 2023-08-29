@@ -341,7 +341,7 @@ limitations under the License.
     <plexusDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/plexus-snapshots</plexusDistMgmtSnapshotsUrl>
     <project.build.outputTimestamp>2023-07-23T09:58:29Z</project.build.outputTimestamp>
     <gpg.useagent>true</gpg.useagent>
-    <spotless-maven-plugin.version>2.38.0</spotless-maven-plugin.version>
+    <spotless-maven-plugin.version>2.39.0</spotless-maven-plugin.version>
     <mavenPluginToolsVersion>3.9.0</mavenPluginToolsVersion>
     <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
     <mavenSurefireVersion>3.1.2</mavenSurefireVersion>
