@@ -591,7 +591,10 @@ limitations under the License.
             <java>
               <!-- orders of used formatters are important -->
               <!-- eg. palantir override importOrder, so should be first -->
-              <palantirJavaFormat />
+              <palantirJavaFormat>
+                <!-- TODO revert it with spotless plugin update with fix for https://github.com/diffplug/spotless/issues/1774 -->
+                <version>2.35.0</version>
+              </palantirJavaFormat>
               <removeUnusedImports />
               <importOrder>
                 <order>javax,java,,\#</order>
