@@ -380,7 +380,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.3.1</version>
           <configuration>
             <configLocation>config/maven_checks.xml</configLocation>
             <!-- version from release 11 referenced by branch -->
