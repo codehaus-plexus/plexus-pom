@@ -497,7 +497,6 @@ limitations under the License.
           <version>3.0.1</version>
           <configuration>
             <goals>deploy</goals>
-            <mavenExecutorId>forked-path</mavenExecutorId>
             <releaseProfiles>plexus-release</releaseProfiles>
           </configuration>
         </plugin>
