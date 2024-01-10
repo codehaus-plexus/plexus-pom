@@ -345,7 +345,7 @@ limitations under the License.
     <spotless-maven-plugin.version>2.41.1</spotless-maven-plugin.version>
     <mavenPluginToolsVersion>3.10.2</mavenPluginToolsVersion>
     <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
-    <mavenSurefireVersion>3.2.3</mavenSurefireVersion>
+    <mavenSurefireVersion>3.2.5</mavenSurefireVersion>
     <junit5Version>5.10.1</junit5Version>
     <spotless.action>check</spotless.action>
     <sisuMavenPluginVersion>0.9.0.M2</sisuMavenPluginVersion>
