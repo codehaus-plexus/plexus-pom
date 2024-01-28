@@ -349,6 +349,7 @@ limitations under the License.
     <junit5Version>5.10.1</junit5Version>
     <spotless.action>check</spotless.action>
     <sisuMavenPluginVersion>0.9.0.M2</sisuMavenPluginVersion>
+    <invoker.streamLogsOnFailures>true</invoker.streamLogsOnFailures>
   </properties>
 
   <dependencyManagement>
@@ -430,6 +431,14 @@ limitations under the License.
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-invoker-plugin</artifactId>
+          <version>3.6.0</version>
+          <configuration>
+            <streamLogsOnFailures>${invoker.streamLogsOnFailures}</streamLogsOnFailures>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
