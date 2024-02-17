@@ -297,10 +297,6 @@ limitations under the License.
       <post>mojohaus-dev@googlegroups.com</post>
       <archive>https://groups.google.com/forum/#!forum/mojohaus-dev</archive>
     </mailingList>
-    <mailingList>
-      <name>Former (pre-2015-06) Development List</name>
-      <archive>https://markmail.org/list/org.codehaus.plexus.dev</archive>
-    </mailingList>
   </mailingLists>
 
   <scm>
