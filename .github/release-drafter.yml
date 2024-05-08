@@ -1,2 +1,5 @@
 _extends: .github
-tag-template: plexus-$NEXT_MINOR_VERSION
+# plexus-pom uses a single version number
+version-template: '$MAJOR'
+name-template: '$NEXT_MAJOR_VERSION'
+tag-template: 'plexus-$NEXT_MAJOR_VERSION'
