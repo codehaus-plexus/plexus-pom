@@ -340,7 +340,7 @@ limitations under the License.
     <gpg.useagent>true</gpg.useagent>
     <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
     <mavenPluginToolsVersion>3.13.0</mavenPluginToolsVersion>
-    <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
+    <mavenFluidoSkinVersion>1.12.0</mavenFluidoSkinVersion>
     <mavenSurefireVersion>3.2.5</mavenSurefireVersion>
     <junit5Version>5.10.2</junit5Version>
     <spotless.action>check</spotless.action>
