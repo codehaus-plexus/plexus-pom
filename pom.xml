@@ -336,6 +336,7 @@ limitations under the License.
     <maven.compiler.target>${javaVersion}</maven.compiler.target>
     <!-- in order to restore default annotation processing behaviour, please override with empty value -->
     <maven.compiler.proc>none</maven.compiler.proc>
+    <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <plexusDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/plexus-snapshots</plexusDistMgmtSnapshotsUrl>
     <project.build.outputTimestamp>2024-03-04T19:10:03Z</project.build.outputTimestamp>
@@ -406,6 +407,7 @@ limitations under the License.
           <version>3.13.0</version>
           <configuration>
             <proc>${maven.compiler.proc}</proc>
+            <showDeprecation>${maven.compiler.showDeprecation}</showDeprecation>
           </configuration>
         </plugin>
         <plugin>
