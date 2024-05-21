@@ -660,6 +660,7 @@ limitations under the License.
             <goals>
               <goal>attach-descriptor</goal>
             </goals>
+            <inherited>false</inherited>
           </execution>
         </executions>
       </plugin>
