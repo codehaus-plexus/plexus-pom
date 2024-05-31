@@ -342,7 +342,7 @@ limitations under the License.
     <project.build.outputTimestamp>2024-05-21T19:07:51Z</project.build.outputTimestamp>
     <gpg.useagent>true</gpg.useagent>
     <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
-    <mavenPluginToolsVersion>3.13.0</mavenPluginToolsVersion>
+    <mavenPluginToolsVersion>3.13.1</mavenPluginToolsVersion>
     <mavenFluidoSkinVersion>1.12.0</mavenFluidoSkinVersion>
     <mavenSurefireVersion>3.2.5</mavenSurefireVersion>
     <junit5Version>5.10.2</junit5Version>
