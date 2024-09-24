@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Plexus Container" xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 https://maven.apache.org/xsd/decoration-1.8.0.xsd">
-  <bannerLeft>
-    <name>Plexus</name>
-    <href>https://codehaus-plexus.github.io/</href>
-    <src>https://codehaus-plexus.github.io/images/plexus-logo-trans.png</src>
+<site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd">
+
+  <bannerLeft href="https://codehaus-plexus.github.io/">
+    <image src="https://codehaus-plexus.github.io/images/plexus-logo-trans.png" alt="Plexus" />
   </bannerLeft>
 
   <skin>
@@ -34,7 +33,7 @@
     </fluidoSkin>
   </custom>
 
-  <publishDate format="yyyy-MM-dd" position="right" />
+  <publishDate position="right" />
   <version position="right" />
 
   <body>
@@ -75,4 +74,4 @@
       <item name="Plexus XML"             href="https://codehaus-plexus.github.io/plexus-xml/" />
     </menu>
   </body>
-</project>
+</site>
