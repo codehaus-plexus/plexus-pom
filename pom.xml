@@ -734,6 +734,9 @@ limitations under the License.
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>taglist-maven-plugin</artifactId>
+            <configuration>
+              <skipEmptyReport>true</skipEmptyReport>
+            </configuration>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
