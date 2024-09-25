@@ -354,12 +354,6 @@ limitations under the License.
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.apache.maven.plugin-tools</groupId>
-        <artifactId>maven-plugin-annotations</artifactId>
-        <version>${mavenPluginToolsVersion}</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
         <version>${junit5Version}</version>
