@@ -346,7 +346,7 @@ limitations under the License.
     <mavenFluidoSkinVersion>2.0.1</mavenFluidoSkinVersion>
     <mavenSurefireVersion>3.5.2</mavenSurefireVersion>
     <junit5Version>5.11.4</junit5Version>
-    <spotless.action>check</spotless.action>
+    <spotless.action>apply</spotless.action>
     <sisuMavenPluginVersion>0.9.0.M3</sisuMavenPluginVersion>
     <invoker.streamLogsOnFailures>true</invoker.streamLogsOnFailures>
   </properties>
@@ -864,28 +864,6 @@ limitations under the License.
           </plugin>
         </plugins>
       </build>
-    </profile>
-    <profile>
-      <id>format-check</id>
-      <activation>
-        <property>
-          <name>!format</name>
-        </property>
-      </activation>
-      <properties>
-        <spotless.action>check</spotless.action>
-      </properties>
-    </profile>
-    <profile>
-      <id>format</id>
-      <activation>
-        <property>
-          <name>format</name>
-        </property>
-      </activation>
-      <properties>
-        <spotless.action>apply</spotless.action>
-      </properties>
     </profile>
   </profiles>
 </project>
