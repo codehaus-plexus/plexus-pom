@@ -334,6 +334,7 @@ limitations under the License.
     <minimalMavenBuildVersion>3.6.3</minimalMavenBuildVersion>
     <maven.compiler.source>${javaVersion}</maven.compiler.source>
     <maven.compiler.target>${javaVersion}</maven.compiler.target>
+    <maven.compiler.release>${javaVersion}</maven.compiler.release>
     <!-- in order to restore default annotation processing behaviour, please override with empty value -->
     <maven.compiler.proc>none</maven.compiler.proc>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
@@ -854,7 +855,6 @@ limitations under the License.
       </activation>
 
       <properties>
-        <maven.compiler.release>${javaVersion}</maven.compiler.release>
         <!-- configuration for checkstyle to use with spotless -->
         <checkstyle.spotless.config>config/maven_checks_nocodestyle.xml</checkstyle.spotless.config>
       </properties>
