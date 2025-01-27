@@ -332,6 +332,7 @@ limitations under the License.
   <properties>
     <javaVersion>8</javaVersion>
     <minimalMavenBuildVersion>3.6.3</minimalMavenBuildVersion>
+    <minimalJavaBuildVersion>${javaVersion}</minimalJavaBuildVersion>
     <maven.compiler.source>${javaVersion}</maven.compiler.source>
     <maven.compiler.target>${javaVersion}</maven.compiler.target>
     <maven.compiler.release>${javaVersion}</maven.compiler.release>
@@ -656,6 +657,9 @@ limitations under the License.
                 <enforceBytecodeVersion>
                   <maxJdkVersion>${maven.compiler.target}</maxJdkVersion>
                 </enforceBytecodeVersion>
+                <requireJavaVersion>
+                  <version>${minimalJavaBuildVersion}</version>
+                </requireJavaVersion>
               </rules>
             </configuration>
           </execution>
