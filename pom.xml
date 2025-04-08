@@ -880,5 +880,27 @@ limitations under the License.
         </plugins>
       </build>
     </profile>
+    <profile>
+      <id>format-check</id>
+      <activation>
+        <property>
+          <name>env.CI</name>
+        </property>
+      </activation>
+      <properties>
+        <spotless.action>check</spotless.action>
+      </properties>
+    </profile>
+    <profile>
+      <id>format</id>
+      <activation>
+        <property>
+          <name>!env.CI</name>
+        </property>
+      </activation>
+      <properties>
+        <spotless.action>apply</spotless.action>
+      </properties>
+    </profile>
   </profiles>
 </project>
