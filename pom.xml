@@ -313,14 +313,12 @@ limitations under the License.
 
   <distributionManagement>
     <repository>
-      <id>plexus-releases</id>
-      <name>Plexus Release Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>sonatype-cp</id>
+      <url>https://repo.maven.apache.org/maven2</url>
     </repository>
     <snapshotRepository>
-      <id>plexus-snapshots</id>
-      <name>Plexus Snapshot Repository</name>
-      <url>${plexusDistMgmtSnapshotsUrl}</url>
+      <id>sonatype-cp</id>
+      <url>https://central.sonatype.com/repository/maven-snapshots</url>
     </snapshotRepository>
     <!-- site distribution management must be override in child projects -->
     <site>
@@ -348,9 +346,14 @@ limitations under the License.
     <mavenFluidoSkinVersion>2.1.0</mavenFluidoSkinVersion>
     <mavenSurefireVersion>3.5.3</mavenSurefireVersion>
     <junit5Version>5.13.0</junit5Version>
+    <njord.version>0.7.1</njord.version>
     <spotless.action>apply</spotless.action>
     <sisuMavenPluginVersion>0.9.0.M4</sisuMavenPluginVersion>
     <invoker.streamLogsOnFailures>true</invoker.streamLogsOnFailures>
+
+    <!-- njord configuration -->
+    <njord.autoPublish>true</njord.autoPublish>
+    <njord.enabled>false</njord.enabled>
   </properties>
 
   <dependencyManagement>
@@ -368,6 +371,11 @@ limitations under the License.
   <build>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>eu.maveniverse.maven.plugins</groupId>
+          <artifactId>njord</artifactId>
+          <version>${njord.version}</version>
+        </plugin>
         <!-- set versions of common plugins for reproducibility, ordered alphabetically -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -683,6 +691,13 @@ limitations under the License.
         </executions>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <groupId>eu.maveniverse.maven.njord</groupId>
+        <artifactId>extension</artifactId>
+        <version>${njord.version}</version>
+      </extension>
+    </extensions>
   </build>
 
   <reporting>
@@ -786,6 +801,11 @@ limitations under the License.
     </profile>
     <profile>
       <id>plexus-release</id>
+      <properties>
+        <minimalMavenBuildVersion>3.9.0</minimalMavenBuildVersion>
+        <!-- use njord during release -->
+        <njord.enabled>true</njord.enabled>
+      </properties>
       <build>
         <plugins>
           <!-- Create a source-release artifact that contains the fully buildable
