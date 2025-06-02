@@ -11,7 +11,7 @@ Release manager should include the following sections in your personal `settings
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
   <servers>
     <server>
-      <id>sonatype-cp</id>
+      <id>sonatype-central-portal</id>
       <username>jqhacker</username> <!-- central portal token -->
       <password>SeCrEt</password> <!-- central portal token -->
       <configuration>

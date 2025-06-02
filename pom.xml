@@ -313,11 +313,11 @@ limitations under the License.
 
   <distributionManagement>
     <repository>
-      <id>sonatype-cp</id>
+      <id>sonatype-central-portal</id>
       <url>https://repo.maven.apache.org/maven2</url>
     </repository>
     <snapshotRepository>
-      <id>sonatype-cp</id>
+      <id>sonatype-central-portal</id>
       <url>https://central.sonatype.com/repository/maven-snapshots</url>
     </snapshotRepository>
     <!-- site distribution management must be override in child projects -->
