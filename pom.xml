@@ -354,6 +354,8 @@ limitations under the License.
     <junit5Version>5.13.3</junit5Version>
     <njord.version>0.7.5</njord.version>
     <spotless.action>apply</spotless.action>
+    <!-- we use version 2.56.0 due to: https://github.com/palantir/palantir-java-format/issues/1320 -->
+    <plantirJavaFormatVersion>2.56.0</plantirJavaFormatVersion>
     <sisuMavenPluginVersion>0.9.0.M4</sisuMavenPluginVersion>
     <invoker.streamLogsOnFailures>true</invoker.streamLogsOnFailures>
 
@@ -612,7 +614,11 @@ limitations under the License.
             <java>
               <!-- orders of used formatters are important -->
               <!-- eg. palantir override importOrder, so should be first -->
-              <palantirJavaFormat />
+              <palantirJavaFormat>
+                <!-- Declare version so that spotless does not choose a version based on JDK version -->
+                <!-- https://github.com/diffplug/spotless/issues/2503#issuecomment-2953146277 -->
+                <version>${plantirJavaFormatVersion}</version>
+              </palantirJavaFormat>
               <removeUnusedImports />
               <importOrder>
                 <order>javax,java,,\#</order>
@@ -625,6 +631,7 @@ limitations under the License.
                 <expandEmptyElements>false</expandEmptyElements>
                 <!-- https://issues.apache.org/jira/browse/MRELEASE-1111 -->
                 <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
+                <quiet>true</quiet>
               </sortPom>
             </pom>
             <markdown>
@@ -888,7 +895,7 @@ limitations under the License.
     <profile>
       <id>java11+</id>
       <activation>
-        <jdk>[11,)</jdk>
+        <jdk>[11,25)</jdk>
       </activation>
 
       <properties>
