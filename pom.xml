@@ -364,6 +364,7 @@ limitations under the License.
     <njord.publishingType>automatic</njord.publishingType>
     <njord.waitForStates>true</njord.waitForStates>
     <njord.enabled>false</njord.enabled>
+    <!-- enable only during release: see plexus-release profile -->
   </properties>
 
   <dependencyManagement>
@@ -810,6 +811,11 @@ limitations under the License.
                 </reports>
               </reportSet>
             </reportSets>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-artifact-plugin</artifactId>
+            <version>3.6.1</version>
           </plugin>
         </plugins>
       </reporting>
