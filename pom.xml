@@ -662,7 +662,7 @@ limitations under the License.
           <dependency>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.10.0</version>
+            <version>1.11.0</version>
           </dependency>
         </dependencies>
         <executions>
