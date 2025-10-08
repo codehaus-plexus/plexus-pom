@@ -325,7 +325,7 @@ limitations under the License.
     <!-- site distribution management must be override in child projects -->
     <site>
       <id>github:gh-pages</id>
-      <url>${project.scm.developerConnection}</url>
+      <url>${project.url}</url>
     </site>
   </distributionManagement>
 
