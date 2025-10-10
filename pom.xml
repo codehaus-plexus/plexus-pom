@@ -357,7 +357,9 @@ limitations under the License.
     <sisuMavenPluginVersion>0.9.0.M4</sisuMavenPluginVersion>
     <invoker.streamLogsOnFailures>true</invoker.streamLogsOnFailures>
 
-    <!-- njord configuration -->
+    <!-- njord configuration (https://maveniverse.eu/docs/njord/configuration/#njord-properties) -->
+    <njord.releaseUrl>njord:template:release-sca</njord.releaseUrl>
+    <njord.publisher>sonatype-cp</njord.publisher>
     <njord.autoPublish>true</njord.autoPublish>
     <njord.publishingType>automatic</njord.publishingType>
     <njord.waitForStates>true</njord.waitForStates>
