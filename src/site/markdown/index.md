@@ -14,10 +14,6 @@ Release manager should include the following sections in your personal `settings
       <id>sonatype-central-portal</id>
       <username>jqhacker</username> <!-- central portal token -->
       <password>SeCrEt</password> <!-- central portal token -->
-      <configuration>
-        <njord.publisher>sonatype-cp</njord.publisher>
-        <njord.releaseUrl>njord:template:release-sca</njord.releaseUrl>
-      </configuration>
     </server>
   </servers>
 </settings>
