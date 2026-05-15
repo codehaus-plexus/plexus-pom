@@ -352,7 +352,7 @@ limitations under the License.
     <mavenFluidoSkinVersion>2.1.0</mavenFluidoSkinVersion>
     <mavenSurefireVersion>3.5.5</mavenSurefireVersion>
     <junit5Version>5.14.4</junit5Version>
-    <njord.version>0.9.5</njord.version>
+    <njord.version>0.9.6</njord.version>
     <spotless.action>apply</spotless.action>
     <sisuMavenPluginVersion>1.0.0</sisuMavenPluginVersion>
     <invoker.streamLogsOnFailures>true</invoker.streamLogsOnFailures>
