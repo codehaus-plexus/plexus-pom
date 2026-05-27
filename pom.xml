@@ -350,7 +350,7 @@ limitations under the License.
     <spotless-maven-plugin.version>3.5.1</spotless-maven-plugin.version>
     <mavenPluginToolsVersion>3.15.2</mavenPluginToolsVersion>
     <mavenFluidoSkinVersion>2.1.0</mavenFluidoSkinVersion>
-    <mavenSurefireVersion>3.5.5</mavenSurefireVersion>
+    <mavenSurefireVersion>3.5.6</mavenSurefireVersion>
     <junit5Version>5.14.4</junit5Version>
     <njord.version>0.9.6</njord.version>
     <spotless.action>apply</spotless.action>
