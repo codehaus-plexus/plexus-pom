@@ -354,7 +354,7 @@ limitations under the License.
     <junit5Version>5.14.4</junit5Version>
     <njord.version>0.9.7</njord.version>
     <spotless.action>apply</spotless.action>
-    <sisuMavenPluginVersion>1.0.0</sisuMavenPluginVersion>
+    <sisuMavenPluginVersion>1.0.1</sisuMavenPluginVersion>
     <invoker.streamLogsOnFailures>true</invoker.streamLogsOnFailures>
 
     <!-- njord configuration (https://maveniverse.eu/docs/njord/configuration/#njord-properties) -->
