@@ -636,7 +636,10 @@ limitations under the License.
                 <include>**/*.md</include>
               </includes>
               <excludes>
-                <excludes>target/**</excludes>
+                <exclude>target/**</exclude>
+                <!-- site sources are Doxia input, not prose: flexmark rewrites the fence that closes
+                     a YAML front matter block, which loses the page's title, author and date -->
+                <exclude>**/src/site/markdown/**</exclude>
               </excludes>
               <flexmark />
             </markdown>
