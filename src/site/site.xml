@@ -51,6 +51,7 @@
 
     <menu name="Plexus Projects" inherit="bottom">
       <item name="Plexus Archiver"      href="https://codehaus-plexus.github.io/plexus-archiver/"/>
+      <item name="Plexus Build API"     href="https://codehaus-plexus.github.io/plexus-build-api/"/>
       <item name="Plexus Classworlds"   href="https://codehaus-plexus.github.io/plexus-classworlds/" />
       <item name="Plexus Compiler"      href="https://codehaus-plexus.github.io/plexus-compiler/"/>
       <item name="Plexus i18n"          href="https://codehaus-plexus.github.io/plexus-i18n/"/>
@@ -61,6 +62,8 @@
       <item name="Plexus Modello"       href="https://codehaus-plexus.github.io/modello/" />
       <item name="Plexus Parent POM"    href="https://codehaus-plexus.github.io/plexus-pom/"/>
       <item name="Plexus Resources"     href="https://codehaus-plexus.github.io/plexus-resources/"/>
+      <item name="Plexus Sec Dispatcher" href="https://codehaus-plexus.github.io/plexus-sec-dispatcher/"/>
+      <item name="Plexus Testing"       href="https://codehaus-plexus.github.io/plexus-testing/"/>
       <item name="Plexus Utils"         href="https://codehaus-plexus.github.io/plexus-utils/" />
       <item name="Plexus Velocity"      href="https://codehaus-plexus.github.io/plexus-velocity/"/>
       <item name="Plexus XML"           href="https://codehaus-plexus.github.io/plexus-xml/" />
