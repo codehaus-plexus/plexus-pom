@@ -312,6 +312,11 @@ limitations under the License.
     <url>https://github.com/codehaus-plexus/plexus-pom/issues</url>
   </issueManagement>
 
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/codehaus-plexus/plexus-pom/actions</url>
+  </ciManagement>
+
   <distributionManagement>
     <repository>
       <id>sonatype-central-portal</id>
@@ -341,6 +346,7 @@ limitations under the License.
     <maven.compiler.proc>none</maven.compiler.proc>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <plexusDistMgmtSnapshotsId>sonatype-central-portal</plexusDistMgmtSnapshotsId>
     <plexusDistMgmtSnapshotsName>Sonatype Central Snapshots</plexusDistMgmtSnapshotsName>
@@ -348,15 +354,46 @@ limitations under the License.
 
     <project.build.outputTimestamp>2026-08-08T17:48:42Z</project.build.outputTimestamp>
     <gpg.useagent>true</gpg.useagent>
-    <spotless-maven-plugin.version>3.9.0</spotless-maven-plugin.version>
-    <mavenPluginToolsVersion>3.15.2</mavenPluginToolsVersion>
-    <mavenFluidoSkinVersion>2.1.0</mavenFluidoSkinVersion>
-    <mavenSurefireVersion>3.5.6</mavenSurefireVersion>
-    <junit5Version>5.14.4</junit5Version>
-    <njord.version>0.9.9</njord.version>
     <spotless.action>apply</spotless.action>
-    <sisuMavenPluginVersion>1.1.0</sisuMavenPluginVersion>
     <invoker.streamLogsOnFailures>true</invoker.streamLogsOnFailures>
+
+    <!-- managed versions, named version.<artifactId> as in org.apache:apache, so that a child
+         can override any single one of them from its own POM or from the command line -->
+    <version.apache-resource-bundles>1.8</version.apache-resource-bundles>
+    <version.extra-enforcer-rules>1.12.0</version.extra-enforcer-rules>
+    <version.junit5>5.14.4</version.junit5>
+    <version.maven-artifact-plugin>3.6.1</version.maven-artifact-plugin>
+    <version.maven-assembly-plugin>3.8.0</version.maven-assembly-plugin>
+    <version.maven-checkstyle-plugin>3.6.0</version.maven-checkstyle-plugin>
+    <version.maven-clean-plugin>3.5.0</version.maven-clean-plugin>
+    <version.maven-compiler-plugin>3.15.0</version.maven-compiler-plugin>
+    <version.maven-dependency-plugin>3.11.0</version.maven-dependency-plugin>
+    <version.maven-deploy-plugin>3.1.4</version.maven-deploy-plugin>
+    <version.maven-enforcer-plugin>3.6.3</version.maven-enforcer-plugin>
+    <version.maven-fluido-skin>2.1.0</version.maven-fluido-skin>
+    <version.maven-gpg-plugin>3.2.8</version.maven-gpg-plugin>
+    <version.maven-install-plugin>3.1.4</version.maven-install-plugin>
+    <version.maven-invoker-plugin>3.10.1</version.maven-invoker-plugin>
+    <version.maven-jar-plugin>3.5.1</version.maven-jar-plugin>
+    <version.maven-javadoc-plugin>3.12.0</version.maven-javadoc-plugin>
+    <version.maven-jxr-plugin>3.6.0</version.maven-jxr-plugin>
+    <version.maven-plugin-tools>3.15.2</version.maven-plugin-tools>
+    <version.maven-pmd-plugin>3.28.0</version.maven-pmd-plugin>
+    <version.maven-project-info-reports-plugin>3.9.0</version.maven-project-info-reports-plugin>
+    <version.maven-release-plugin>3.3.1</version.maven-release-plugin>
+    <version.maven-resources-plugin>3.5.0</version.maven-resources-plugin>
+    <version.maven-scm-publish-plugin>3.3.0</version.maven-scm-publish-plugin>
+    <version.maven-shared-resources>6</version.maven-shared-resources>
+    <version.maven-site-plugin>3.22.0</version.maven-site-plugin>
+    <version.maven-source-plugin>3.4.0</version.maven-source-plugin>
+    <!-- for surefire, failsafe and surefire-report -->
+    <version.maven-surefire>3.5.6</version.maven-surefire>
+    <version.njord>0.9.9</version.njord>
+    <!-- declared explicitly so spotless does not pick a palantir version based on the running JDK -->
+    <version.palantir-java-format>2.80.0</version.palantir-java-format>
+    <version.sisu-maven-plugin>1.1.0</version.sisu-maven-plugin>
+    <version.spotless-maven-plugin>3.9.0</version.spotless-maven-plugin>
+    <version.taglist-maven-plugin>3.2.2</version.taglist-maven-plugin>
 
     <!-- njord configuration (https://maveniverse.eu/docs/njord/configuration/#njord-properties) -->
     <njord.releaseUrl>njord:template:release-sca</njord.releaseUrl>
@@ -373,7 +410,7 @@ limitations under the License.
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>${junit5Version}</version>
+        <version>${version.junit5}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -386,41 +423,43 @@ limitations under the License.
         <plugin>
           <groupId>eu.maveniverse.maven.plugins</groupId>
           <artifactId>njord</artifactId>
-          <version>${njord.version}</version>
+          <version>${version.njord}</version>
         </plugin>
         <!-- set versions of common plugins for reproducibility, ordered alphabetically -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.8.0</version>
+          <version>${version.maven-assembly-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.6.0</version>
+          <version>${version.maven-checkstyle-plugin}</version>
           <configuration>
-            <configLocation>config/maven_checks.xml</configLocation>
-            <!-- version from release 11 referenced by branch -->
-            <headerLocation>https://raw.githubusercontent.com/codehaus-plexus/plexus-pom/plexus-11/src/main/resources/config/plexus-header.txt</headerLocation>
+            <!-- code style is owned by spotless/palantir, so checkstyle only runs the remaining
+                 checks. maven_checks_nocodestyle.xml also has no RegexpHeader module, which is what
+                 lets us drop the headerLocation that used to be fetched over HTTP from a git tag on
+                 raw.githubusercontent.com on every build. -->
+            <configLocation>config/maven_checks_nocodestyle.xml</configLocation>
           </configuration>
           <dependencies>
             <!-- MCHECKSTYLE-327: the maven_checks.xml was moved to a shared project -->
             <dependency>
               <groupId>org.apache.maven.shared</groupId>
               <artifactId>maven-shared-resources</artifactId>
-              <version>6</version>
+              <version>${version.maven-shared-resources}</version>
             </dependency>
           </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>${version.maven-clean-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.15.0</version>
+          <version>${version.maven-compiler-plugin}</version>
           <configuration>
             <proc>${maven.compiler.proc}</proc>
             <showDeprecation>${maven.compiler.showDeprecation}</showDeprecation>
@@ -429,22 +468,22 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.11.0</version>
+          <version>${version.maven-dependency-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.4</version>
+          <version>${version.maven-deploy-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.6.3</version>
+          <version>${version.maven-enforcer-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>3.2.8</version>
+          <version>${version.maven-gpg-plugin}</version>
           <configuration>
             <bestPractices>true</bestPractices>
           </configuration>
@@ -452,12 +491,12 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.1.4</version>
+          <version>${version.maven-install-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.5.1</version>
+          <version>${version.maven-jar-plugin}</version>
           <configuration>
             <archive>
               <manifest>
@@ -470,7 +509,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-invoker-plugin</artifactId>
-          <version>3.10.1</version>
+          <version>${version.maven-invoker-plugin}</version>
           <configuration>
             <streamLogsOnFailures>${invoker.streamLogsOnFailures}</streamLogsOnFailures>
           </configuration>
@@ -478,7 +517,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.12.0</version>
+          <version>${version.maven-javadoc-plugin}</version>
           <configuration>
             <quiet>true</quiet>
             <locale>en</locale>
@@ -489,12 +528,12 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jxr-plugin</artifactId>
-          <version>3.6.0</version>
+          <version>${version.maven-jxr-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-plugin</artifactId>
-          <version>${mavenPluginToolsVersion}</version>
+          <version>${version.maven-plugin-tools}</version>
           <executions>
             <execution>
               <id>default-descriptor</id>
@@ -514,12 +553,12 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-report-plugin</artifactId>
-          <version>${mavenPluginToolsVersion}</version>
+          <version>${version.maven-plugin-tools}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.28.0</version>
+          <version>${version.maven-pmd-plugin}</version>
           <configuration>
             <targetJdk>${maven.compiler.source}</targetJdk>
             <rulesets>
@@ -534,12 +573,19 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.9.0</version>
+          <version>${version.maven-project-info-reports-plugin}</version>
+          <configuration>
+            <!-- do not make the published team page fetch avatars from a third party -->
+            <externalAvatarImages>false</externalAvatarImages>
+            <pluginManagementExcludes>
+              <exclude>org.eclipse.m2e:lifecycle-mapping</exclude>
+            </pluginManagementExcludes>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>3.3.1</version>
+          <version>${version.maven-release-plugin}</version>
           <configuration>
             <goals>deploy</goals>
             <releaseProfiles>plexus-release</releaseProfiles>
@@ -548,12 +594,12 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>${version.maven-resources-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-publish-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>${version.maven-scm-publish-plugin}</version>
           <configuration>
             <!-- using scm.developerConnection instead of distributionManagement.site.url -->
             <pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
@@ -563,7 +609,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.22.0</version>
+          <version>${version.maven-site-plugin}</version>
           <configuration>
             <!-- don't deploy site with maven-site-plugin -->
             <skipDeploy>true</skipDeploy>
@@ -572,32 +618,32 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>${version.maven-source-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>${mavenSurefireVersion}</version>
+          <version>${version.maven-surefire}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>${mavenSurefireVersion}</version>
+          <version>${version.maven-surefire}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
-          <version>${mavenSurefireVersion}</version>
+          <version>${version.maven-surefire}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>taglist-maven-plugin</artifactId>
-          <version>3.2.2</version>
+          <version>${version.taglist-maven-plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.eclipse.sisu</groupId>
           <artifactId>sisu-maven-plugin</artifactId>
-          <version>${sisuMavenPluginVersion}</version>
+          <version>${version.sisu-maven-plugin}</version>
           <executions>
             <execution>
               <id>generate-index</id>
@@ -611,12 +657,17 @@ limitations under the License.
         <plugin>
           <groupId>com.diffplug.spotless</groupId>
           <artifactId>spotless-maven-plugin</artifactId>
-          <version>${spotless-maven-plugin.version}</version>
+          <version>${version.spotless-maven-plugin}</version>
           <configuration>
             <java>
               <!-- orders of used formatters are important -->
               <!-- eg. palantir override importOrder, so should be first -->
-              <palantirJavaFormat />
+              <palantirJavaFormat>
+                <!-- declare the version so that spotless does not choose one based on the JDK
+                     running the build: the formatter must produce identical output whether it is
+                     run locally or in CI -->
+                <version>${version.palantir-java-format}</version>
+              </palantirJavaFormat>
               <removeUnusedImports />
               <importOrder>
                 <order>javax,java,,\#</order>
@@ -668,12 +719,14 @@ limitations under the License.
           <dependency>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.12.0</version>
+            <version>${version.extra-enforcer-rules}</version>
           </dependency>
         </dependencies>
+        <!-- one execution per rule, as in org.apache:apache, so that a child can relax or skip a
+             single check without losing the other two -->
         <executions>
           <execution>
-            <id>enforce-maven-and-java-bytecode</id>
+            <id>enforce-maven-version</id>
             <goals>
               <goal>enforce</goal>
             </goals>
@@ -683,12 +736,37 @@ limitations under the License.
                   <version>${minimalMavenBuildVersion}</version>
                   <message>This project requires at least Maven ${minimalMavenBuildVersion}</message>
                 </requireMavenVersion>
-                <enforceBytecodeVersion>
-                  <maxJdkVersion>${maven.compiler.target}</maxJdkVersion>
-                </enforceBytecodeVersion>
+              </rules>
+            </configuration>
+          </execution>
+          <execution>
+            <id>enforce-java-version</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
                 <requireJavaVersion>
                   <version>${minimalJavaBuildVersion}</version>
                 </requireJavaVersion>
+              </rules>
+            </configuration>
+          </execution>
+          <execution>
+            <id>enforce-bytecode-version</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <enforceBytecodeVersion>
+                  <maxJdkVersion>${maven.compiler.target}</maxJdkVersion>
+                  <!-- test-only dependencies routinely ship newer bytecode than the target of the
+                       artifact we publish, and they never end up on a consumer's classpath -->
+                  <ignoredScopes>
+                    <ignoredScope>test</ignoredScope>
+                  </ignoredScopes>
+                </enforceBytecodeVersion>
               </rules>
             </configuration>
           </execution>
@@ -711,7 +789,7 @@ limitations under the License.
       <extension>
         <groupId>eu.maveniverse.maven.njord</groupId>
         <artifactId>extension3</artifactId>
-        <version>${njord.version}</version>
+        <version>${version.njord}</version>
       </extension>
     </extensions>
   </build>
@@ -815,7 +893,7 @@ limitations under the License.
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-artifact-plugin</artifactId>
-            <version>3.6.1</version>
+            <version>${version.maven-artifact-plugin}</version>
           </plugin>
         </plugins>
       </reporting>
@@ -838,7 +916,7 @@ limitations under the License.
               <dependency>
                 <groupId>org.apache.apache.resources</groupId>
                 <artifactId>apache-source-release-assembly-descriptor</artifactId>
-                <version>1.8</version>
+                <version>${version.apache-resource-bundles}</version>
               </dependency>
             </dependencies>
             <executions>
@@ -904,24 +982,12 @@ limitations under the License.
         <jdk>[17,)</jdk>
       </activation>
 
-      <properties>
-        <!-- configuration for checkstyle to use with spotless -->
-        <checkstyle.spotless.config>config/maven_checks_nocodestyle.xml</checkstyle.spotless.config>
-      </properties>
-
       <build>
         <!--- newer versions of plugins requires JDK 17 -->
         <plugins>
           <plugin>
             <groupId>com.diffplug.spotless</groupId>
             <artifactId>spotless-maven-plugin</artifactId>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <configuration>
-              <configLocation>${checkstyle.spotless.config}</configLocation>
-            </configuration>
           </plugin>
         </plugins>
       </build>

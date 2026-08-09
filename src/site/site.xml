@@ -10,7 +10,7 @@
   <skin>
     <groupId>org.apache.maven.skins</groupId>
     <artifactId>maven-fluido-skin</artifactId>
-    <version>${mavenFluidoSkinVersion}</version>
+    <version>${version.maven-fluido-skin}</version>
   </skin>
 
   <edit>${project.scm.url}</edit>
