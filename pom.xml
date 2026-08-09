@@ -337,7 +337,7 @@ limitations under the License.
 
   <properties>
     <javaVersion>8</javaVersion>
-    <minimalMavenBuildVersion>3.6.3</minimalMavenBuildVersion>
+    <minimalMavenBuildVersion>3.9.0</minimalMavenBuildVersion>
     <minimalJavaBuildVersion>${javaVersion}</minimalJavaBuildVersion>
     <maven.compiler.source>${javaVersion}</maven.compiler.source>
     <maven.compiler.target>${javaVersion}</maven.compiler.target>
@@ -901,7 +901,6 @@ limitations under the License.
     <profile>
       <id>plexus-release</id>
       <properties>
-        <minimalMavenBuildVersion>3.9.0</minimalMavenBuildVersion>
         <!-- use njord during release -->
         <njord.enabled>true</njord.enabled>
       </properties>
