@@ -38,7 +38,7 @@ that element to point at its own `gh-pages` branch.
 
 The parent POM covers the following areas:
 
-- **Baselines**: Java 8 through the `javaVersion` property, Maven 3.6.3 as the minimum, and UTF-8 sources.
+- **Baselines**: Java 8 through the `javaVersion` property, Maven 3.9.0 as the minimum, and UTF-8 sources.
 - **Enforcer**: the Maven and JDK minimums, and a rule from `extra-enforcer-rules` that rejects a
   dependency whose bytecode is newer than your compiler target.
 - **Formatting**: Spotless with palantir-java-format, sorted POM files, and flexmark for Markdown.
@@ -48,6 +48,8 @@ The parent POM covers the following areas:
 - **Reporting**: the `reporting` profile adds Javadoc, JXR, surefire, PMD/CPD, and taglist.
 - **Releasing**: the `plexus-release` profile adds GPG signing, sources, and a source-release assembly,
   and enables [Njord](https://maveniverse.eu/docs/njord/) to publish to Maven Central.
+- **Version properties**: every managed plugin version has a `version.<artifactId>` property, so a child
+  can pin a different version without redeclaring the plugin.
 
 For an explanation of each area, see the [project site](https://codehaus-plexus.github.io/plexus-pom/),
 which also lists every
@@ -55,8 +57,8 @@ which also lists every
 
 ## Requirements
 
-To build a project that inherits this POM, you need Java 8 or later and Maven 3.6.3 or later. To release
-one, you need Maven 3.9.0 or later.
+To build a project that inherits this POM, you need Java 8 or later and Maven 3.9.0 or later. Version 27
+raised the Maven minimum from 3.6.3; it applies to building the project, not to consuming its artifacts.
 
 ## Documentation
 

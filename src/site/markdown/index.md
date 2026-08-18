@@ -26,7 +26,7 @@ The following table lists the settings the parent POM fixes:
 | Setting | Value |
 |---|---|
 | Java, through the `javaVersion` property | 8, which sets `maven.compiler.source`, `target`, and `release` |
-| Minimum Maven to build | 3.6.3, or 3.9.0 to release |
+| Minimum Maven to build | 3.9.0, raised from 3.6.3 in version 27 |
 | Source encoding | UTF-8 |
 | Annotation processing | Off, through `maven.compiler.proc=none` |
 
