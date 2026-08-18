@@ -1,55 +1,62 @@
-# Plexus Parent POM
+# Plexus parent POM
 
 [![Maven Central](https://img.shields.io/maven-central/v/org.codehaus.plexus/plexus.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/org.codehaus.plexus/plexus)
 [![GitHub CI](https://github.com/codehaus-plexus/plexus-pom/actions/workflows/maven.yml/badge.svg)](https://github.com/codehaus-plexus/plexus-pom/actions)
 [![License](https://img.shields.io/github/license/codehaus-plexus/plexus-pom.svg?label=License)](https://www.apache.org/licenses/LICENSE-2.0)
 
-The parent POM inherited by every project in the [Codehaus Plexus](https://github.com/codehaus-plexus)
-organisation. It pins plugin versions, the Java and Maven baselines, formatting, reporting and the release
-setup, so the individual projects carry almost no build configuration of their own.
+Every project in the [Codehaus Plexus](https://github.com/codehaus-plexus) organization inherits this
+parent POM. It sets plugin versions, the Java and Maven baselines, formatting, reporting, and the release
+setup, so each project carries almost no build configuration of its own.
 
 ## Status
 
-Maintained. Released whenever plugin or dependency updates accumulate, roughly every couple of months.
+Maintained. A release follows whenever plugin or dependency updates accumulate, roughly every two months.
 
-This is infrastructure for the Plexus projects rather than a general-purpose parent — it assumes Sonatype
-Central Portal publishing, GitHub Pages site hosting and the organisation's shared CI workflow. You are
-welcome to use it, but it is not designed to be neutral.
+This POM is infrastructure for the Plexus projects rather than a general-purpose parent. It assumes
+publishing through the Sonatype Central Portal, site hosting on GitHub Pages, and the organization's
+shared CI workflow. You're welcome to use it, but it isn't designed to be neutral.
 
-## Using it
+## Inherit the parent POM
+
+Add the following to your project's POM:
 
 ```xml
 <parent>
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus</artifactId>
-  <version>25</version>
+  <version>VERSION</version>
 </parent>
 ```
 
-Check the badge above for the current version.
+Replace `VERSION` with a released version from
+[Maven Central](https://central.sonatype.com/artifact/org.codehaus.plexus/plexus).
 
-Projects must override `distributionManagement/site` to point at their own `gh-pages` branch; everything
-else is inherited.
+Your project inherits everything except the `distributionManagement/site` element. Each project overrides
+that element to point at its own `gh-pages` branch.
 
-## What it configures
+## What the parent POM configures
 
-- **Baselines** — Java 8 (`javaVersion`), Maven 3.6.3 minimum, UTF-8 sources
-- **Enforcer** — Maven and JDK minimums, plus a rule rejecting dependencies whose bytecode is newer than
-  your compiler target
-- **Formatting** — Spotless with palantir-java-format, sorted POMs, flexmark for Markdown. Applies locally,
-  checks in CI
-- **Reproducible builds** — `project.build.outputTimestamp` is set and the results are verified by
-  [Reproducible Central](https://github.com/jvm-repo-rebuild/reproducible-central)
-- **Reporting** — the `reporting` profile adds Javadoc, JXR, surefire, PMD/CPD and taglist
-- **Releasing** — the `plexus-release` profile adds GPG signing, sources and a source-release assembly, and
-  enables [Njord](https://maveniverse.eu/docs/njord/) to publish to Central
+The parent POM covers the following areas:
 
-The [project site](https://codehaus-plexus.github.io/plexus-pom/) explains each of these, and lists every
+- **Baselines**: Java 8 through the `javaVersion` property, Maven 3.6.3 as the minimum, and UTF-8 sources.
+- **Enforcer**: the Maven and JDK minimums, and a rule from `extra-enforcer-rules` that rejects a
+  dependency whose bytecode is newer than your compiler target.
+- **Formatting**: Spotless with palantir-java-format, sorted POM files, and flexmark for Markdown.
+  Spotless rewrites your sources locally and checks them in CI.
+- **Reproducible builds**: the `project.build.outputTimestamp` property is set, and
+  [Reproducible Central](https://github.com/jvm-repo-rebuild/reproducible-central) verifies the results.
+- **Reporting**: the `reporting` profile adds Javadoc, JXR, surefire, PMD/CPD, and taglist.
+- **Releasing**: the `plexus-release` profile adds GPG signing, sources, and a source-release assembly,
+  and enables [Njord](https://maveniverse.eu/docs/njord/) to publish to Maven Central.
+
+For an explanation of each area, see the [project site](https://codehaus-plexus.github.io/plexus-pom/),
+which also lists every
 [managed plugin version](https://codehaus-plexus.github.io/plexus-pom/plugin-management.html).
 
 ## Requirements
 
-Java 8 or later to build a consuming project; Maven 3.6.3 or later (3.9.0 when releasing).
+To build a project that inherits this POM, you need Java 8 or later and Maven 3.6.3 or later. To release
+one, you need Maven 3.9.0 or later.
 
 ## Documentation
 
@@ -59,9 +66,12 @@ Java 8 or later to build a consuming project; Maven 3.6.3 or later (3.9.0 when r
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/codehaus-plexus/.github/blob/master/CONTRIBUTING.md). Changes here
-affect every project in the organisation, so a version bump that looks routine can break a downstream build
-— please say in the PR description what you have checked.
+For the contribution process, see
+[CONTRIBUTING.md](https://github.com/codehaus-plexus/.github/blob/master/CONTRIBUTING.md).
 
-Please report security vulnerabilities privately — see
-[SECURITY.md](https://github.com/codehaus-plexus/.github/blob/master/SECURITY.md), not a public issue.
+A change here reaches every project in the organization, so a version bump that looks routine can break a
+downstream build. Say in your pull request description what you checked.
+
+To report a security vulnerability, follow
+[SECURITY.md](https://github.com/codehaus-plexus/.github/blob/master/SECURITY.md) rather than opening a
+public issue.
