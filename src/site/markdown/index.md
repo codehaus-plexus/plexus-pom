@@ -1,78 +1,91 @@
-# Plexus Parent POM
+# Plexus parent POM
 
-The parent POM inherited by every project in the [Codehaus Plexus](https://codehaus-plexus.github.io/)
-organisation. It fixes plugin versions, the Java and Maven baselines, code formatting, reporting and the
-release setup, so the individual projects carry almost no build configuration of their own.
+Every project in the [Codehaus Plexus](https://codehaus-plexus.github.io/) organization inherits this
+parent POM. It sets plugin versions, the Java and Maven baselines, code formatting, reporting, and the
+release setup, so each project carries almost no build configuration of its own.
+
+To inherit it, add the following to your project's POM:
 
 ```xml
 <parent>
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus</artifactId>
-  <version><!-- see the badge on the project page --></version>
+  <version>VERSION</version>
 </parent>
 ```
+
+Replace `VERSION` with a released version. The badge on the
+[project page](https://github.com/codehaus-plexus/plexus-pom) links to them.
 
 ## What you get
 
 ### Baselines
 
+The following table lists the settings the parent POM fixes:
+
 | Setting | Value |
 |---|---|
-| Java (`javaVersion`) | 8 — sets `maven.compiler.source`, `target` and `release` |
-| Minimum Maven to build | 3.6.3 (3.9.0 when releasing) |
+| Java, through the `javaVersion` property | 8, which sets `maven.compiler.source`, `target`, and `release` |
+| Minimum Maven to build | 3.6.3, or 3.9.0 to release |
 | Source encoding | UTF-8 |
-| Annotation processing | off (`maven.compiler.proc=none`) — enable it deliberately if you need it |
+| Annotation processing | Off, through `maven.compiler.proc=none` |
 
-Override `javaVersion` in your own POM to raise the baseline; `plexus-sec-dispatcher` and `plexus-xml` 4.x
-set it to 17.
+To raise the Java baseline, override the `javaVersion` property in your own POM. The
+`plexus-sec-dispatcher` and `plexus-xml` 4.x projects set it to 17.
+
+To use annotation processing, turn it on deliberately in your own POM.
 
 ### Enforced at build time
 
-`maven-enforcer-plugin` fails the build on a Maven version below the minimum, a JDK below the baseline,
-and — via `extra-enforcer-rules` — on any **dependency containing bytecode newer than your compiler
-target**. That last rule is the one that usually catches people: it means a dependency compiled for a
-later JDK than you target is an error, not a runtime surprise.
+The `maven-enforcer-plugin` plugin fails the build on a Maven version below the minimum and on a JDK below
+the baseline. Through `extra-enforcer-rules`, it also fails on any dependency containing bytecode newer
+than your compiler target.
+
+That last rule surprises people. A dependency compiled for a later JDK than you target fails the build
+rather than the application.
 
 ### Formatting
 
-Spotless, applied at `process-sources`:
+Spotless runs at the `process-sources` phase and formats three kinds of file:
 
-- Java — [palantir-java-format](https://github.com/palantir/palantir-java-format), unused imports removed,
-  import order `javax, java, all else, static`
-- POMs — sorted with `sortPom`
-- Markdown — flexmark
+- Java, with [palantir-java-format](https://github.com/palantir/palantir-java-format). Spotless removes
+  unused imports and orders the rest as `javax`, `java`, everything else, then static imports.
+- POM files, sorted with `sortPom`.
+- Markdown, with flexmark.
 
-The action depends on where you are. Locally (`!env.CI`) the `format` profile sets `spotless.action=apply`,
-so a build **rewrites your sources**. In CI (`env.CI` set) the `format-check` profile sets it to `check`,
-so the build fails instead. If CI fails on formatting, run `mvn spotless:apply` and commit.
+What Spotless does with a violation depends on where the build runs. On your own machine, where the `CI`
+environment variable isn't set, the `format` profile sets `spotless.action=apply` and the build rewrites
+your sources. In CI, where `CI` is set, the `format-check` profile sets the action to `check` and the
+build fails instead. When CI fails on formatting, run `mvn spotless:apply` and commit the result.
 
-> Note that Spotless formats `**/*.md`. Parent 26 onward excludes `**/src/site/markdown/**`, because
-> flexmark rewrites the fence closing a YAML front matter block and silently destroys a page's title and
-> author. **Parent 25 does not have that exclusion** — if you are on 25 and keep site sources in Markdown,
-> add the exclusion to your own POM.
+**Note:** Spotless formats every `**/*.md` file. Parent 26 and later exclude `**/src/site/markdown/**`,
+because flexmark rewrites the fence that closes a YAML front matter block, which drops the page's title
+and author without reporting an error. Parent 25 has no such exclusion. If you use parent 25 and keep
+site sources in Markdown, add the exclusion to your own POM.
 
 ### Reproducible builds
 
-`project.build.outputTimestamp` is set, and every project here is verified by
-[Reproducible Central](https://github.com/jvm-repo-rebuild/reproducible-central). Keep it set, and bump it
-only as part of a release.
+The `project.build.outputTimestamp` property is set, and
+[Reproducible Central](https://github.com/jvm-repo-rebuild/reproducible-central) verifies every project
+here. Keep the property set, and change its value only as part of a release.
 
 ### Reporting
 
-Project info reports are on by default. The `reporting` profile adds the rest — Javadoc, JXR, surefire,
-PMD/CPD and taglist:
+Project information reports run by default. The `reporting` profile adds Javadoc, JXR, surefire, PMD/CPD,
+and taglist. To build a site with all of them:
 
 ```
 mvn -Preporting site
 ```
 
-Building a site **without** `-Preporting` gives you a site with no API documentation, so always pass it
-when publishing.
+A site built without the `reporting` profile contains no API documentation, so pass the profile whenever
+you publish.
 
 ### Publishing
 
-Snapshots and releases go to the Sonatype Central Portal. `distributionManagement` is inherited;
-`site` **must be overridden** in each project, and points at that project's own `gh-pages` branch:
+Snapshots and releases go to the Sonatype Central Portal. Your project inherits
+`distributionManagement`, but each project overrides the `site` element to point at its own `gh-pages`
+branch:
 
 ```xml
 <distributionManagement>
@@ -83,12 +96,12 @@ Snapshots and releases go to the Sonatype Central Portal. `distributionManagemen
 </distributionManagement>
 ```
 
-`maven-site-plugin` runs with `skipDeploy`, so sites are published by `maven-scm-publish-plugin` rather
-than `site:deploy`.
+The `maven-site-plugin` plugin runs with `skipDeploy`, so the `maven-scm-publish-plugin` plugin publishes
+sites rather than the `site:deploy` goal.
 
 ## Releasing
 
-Full procedure, including site publishing, is in
+For the full procedure, including site publishing, see
 [RELEASING.md](https://github.com/codehaus-plexus/.github/blob/master/RELEASING.md). The short version:
 
 ```
@@ -96,18 +109,18 @@ mvn release:prepare
 mvn release:perform
 ```
 
-`maven-release-plugin` is configured with `<goals>deploy</goals>` and
+The `maven-release-plugin` plugin is configured with `<goals>deploy</goals>` and
 `<releaseProfiles>plexus-release</releaseProfiles>`, so `release:perform` activates the `plexus-release`
 profile. That profile turns on GPG signing, attaches sources and a source-release assembly, and enables
 [Njord](https://maveniverse.eu/docs/njord/), which is registered as a build extension.
 
-Njord is configured with `autoPublish=true` and `publishingType=automatic`, so the deployment is published
-to Central **without a manual step in the Portal UI**. `njord.enabled` is `false` outside the release
-profile, so ordinary builds are unaffected.
+Njord is configured with `autoPublish=true` and `publishingType=automatic`, so it publishes the deployment
+to Maven Central without a manual step in the Portal UI. Outside the release profile, `njord.enabled` is
+`false`, so ordinary builds are unaffected.
 
-### Release manager setup
+### Set up a release manager
 
-A Central Portal token in your personal `settings.xml`:
+Add a Central Portal token to your personal `settings.xml` file:
 
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -115,17 +128,22 @@ A Central Portal token in your personal `settings.xml`:
   <servers>
     <server>
       <id>sonatype-central-portal</id>
-      <username><!-- Central Portal token username --></username>
-      <password><!-- Central Portal token password --></password>
+      <username>TOKEN_USERNAME</username>
+      <password>TOKEN_PASSWORD</password>
     </server>
   </servers>
 </settings>
 ```
 
-Tokens come from <https://central.sonatype.com/account>. It is a generated token pair, not your account
-password.
+Replace the following:
 
-You also need a published GPG key, since releases are signed.
+- `TOKEN_USERNAME`: the username half of a Central Portal token pair
+- `TOKEN_PASSWORD`: the password half of the same pair
+
+Generate the pair from your [Central Portal account](https://central.sonatype.com/account). A token pair
+isn't your account password.
+
+You also need a published GPG key, because releases are signed.
 
 ## Reference
 
