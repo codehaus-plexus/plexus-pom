@@ -1,4 +1,9 @@
 _extends: .github
+
+# tag-prefix is what lets the drafter parse the version out of the last tag.
+# Without it the drafter reads what it can from the tag string, and plexus-i18n
+# once drafted 18.0.1 by finding the 18 in its own name.
+tag-prefix: plexus-
 # plexus-pom uses a single version number
 version-template: '$MAJOR'
 name-template: '$NEXT_MAJOR_VERSION'
