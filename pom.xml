@@ -392,7 +392,7 @@ limitations under the License.
     <!-- declared explicitly so spotless does not pick a palantir version based on the running JDK -->
     <version.palantir-java-format>2.80.0</version.palantir-java-format>
     <version.sisu-maven-plugin>1.1.0</version.sisu-maven-plugin>
-    <version.spotless-maven-plugin>3.10.1</version.spotless-maven-plugin>
+    <version.spotless-maven-plugin>3.10.2</version.spotless-maven-plugin>
     <version.taglist-maven-plugin>3.2.2</version.taglist-maven-plugin>
 
     <!-- njord configuration (https://maveniverse.eu/docs/njord/configuration/#njord-properties) -->
