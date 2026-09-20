@@ -71,7 +71,7 @@ here. Keep the property set, and change its value only as part of a release.
 
 ### Reporting
 
-Project information reports run by default. The `reporting` profile adds Javadoc, JXR, surefire, PMD/CPD,
+Project information reports run by default. The `reporting` profile adds Javadoc, surefire, PMD/CPD,
 and taglist. To build a site with all of them:
 
 ```
