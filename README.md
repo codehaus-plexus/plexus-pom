@@ -45,7 +45,7 @@ The parent POM covers the following areas:
   Spotless rewrites your sources locally and checks them in CI.
 - **Reproducible builds**: the `project.build.outputTimestamp` property is set, and
   [Reproducible Central](https://github.com/jvm-repo-rebuild/reproducible-central) verifies the results.
-- **Reporting**: the `reporting` profile adds Javadoc, JXR, surefire, PMD/CPD, and taglist.
+- **Reporting**: the `reporting` profile adds Javadoc, surefire, PMD/CPD, and taglist.
 - **Releasing**: the `plexus-release` profile adds GPG signing, sources, and a source-release assembly,
   and enables [Njord](https://maveniverse.eu/docs/njord/) to publish to Maven Central.
 - **Version properties**: every managed plugin version has a `version.<artifactId>` property, so a child
