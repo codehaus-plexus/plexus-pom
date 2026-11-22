@@ -390,7 +390,7 @@ limitations under the License.
     <version.njord>0.10.0</version.njord>
     <!-- declared explicitly so spotless does not pick a formatter version based on the running JDK -->
     <version.open-java-format>21.0.2</version.open-java-format>
-    <version.palantir-java-format>2.80.0</version.palantir-java-format>
+    <version.palantir-java-format>2.103.0</version.palantir-java-format>
     <!-- Java formatter of spotless: open-java-format, or palantir-java-format on JDK 17 to 20 (profile java17) -->
     <spotless.java-format.groupArtifact>dev.openjavaformat:open-java-format</spotless.java-format.groupArtifact>
     <spotless.java-format.version>${version.open-java-format}</spotless.java-format.version>
