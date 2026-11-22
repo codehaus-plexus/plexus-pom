@@ -41,7 +41,7 @@ The parent POM covers the following areas:
 - **Baselines**: Java 8 through the `javaVersion` property, Maven 3.9.0 as the minimum, and UTF-8 sources.
 - **Enforcer**: the Maven and JDK minimums, and a rule from `extra-enforcer-rules` that rejects a
   dependency whose bytecode is newer than your compiler target.
-- **Formatting**: Spotless with palantir-java-format, sorted POM files, and flexmark for Markdown.
+- **Formatting**: Spotless with open-java-format (palantir-java-format that also runs on JDK 25 and later), sorted POM files, and flexmark for Markdown.
   Spotless rewrites your sources locally and checks them in CI.
 - **Reproducible builds**: the `project.build.outputTimestamp` property is set, and
   [Reproducible Central](https://github.com/jvm-repo-rebuild/reproducible-central) verifies the results.

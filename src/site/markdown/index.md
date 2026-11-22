@@ -48,7 +48,9 @@ rather than the application.
 
 Spotless runs at the `process-sources` phase and formats three kinds of file:
 
-- Java, with [palantir-java-format](https://github.com/palantir/palantir-java-format). Spotless removes
+- Java, with [open-java-format](https://github.com/openjavaformat/open-java-format), the palantir-java-format
+  code that also runs on JDK 25 and later; it needs JDK 21, so on JDK 17 to 20 palantir-java-format formats instead. The
+  properties `spotless.java-format.groupArtifact` and `spotless.java-format.version` select the formatter. Spotless removes
   unused imports and orders the rest as `javax`, `java`, everything else, then static imports.
 - POM files, sorted with `sortPom`.
 - Markdown, with flexmark.
