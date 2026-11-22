@@ -388,10 +388,14 @@ limitations under the License.
     <!-- for surefire, failsafe and surefire-report -->
     <version.maven-surefire>3.6.1</version.maven-surefire>
     <version.njord>0.10.0</version.njord>
-    <!-- declared explicitly so spotless does not pick a palantir version based on the running JDK -->
+    <!-- declared explicitly so spotless does not pick a formatter version based on the running JDK -->
+    <version.open-java-format>21.0.2</version.open-java-format>
     <version.palantir-java-format>2.80.0</version.palantir-java-format>
+    <!-- Java formatter of spotless: open-java-format, or palantir-java-format on JDK 17 to 20 (profile java17) -->
+    <spotless.java-format.groupArtifact>dev.openjavaformat:open-java-format</spotless.java-format.groupArtifact>
+    <spotless.java-format.version>${version.open-java-format}</spotless.java-format.version>
     <version.sisu-maven-plugin>1.1.2</version.sisu-maven-plugin>
-    <version.spotless-maven-plugin>3.11.0</version.spotless-maven-plugin>
+    <version.spotless-maven-plugin>3.12.0</version.spotless-maven-plugin>
     <version.taglist-maven-plugin>3.3.0</version.taglist-maven-plugin>
 
     <!-- njord configuration (https://maveniverse.eu/docs/njord/configuration/#njord-properties) -->
@@ -660,7 +664,10 @@ limitations under the License.
                 <!-- declare the version so that spotless does not choose one based on the JDK
                      running the build: the formatter must produce identical output whether it is
                      run locally or in CI -->
-                <version>${version.palantir-java-format}</version>
+                <version>${spotless.java-format.version}</version>
+                <!-- open-java-format: the palantir-java-format code under the same packages, which also runs on
+                     JDK 25 and later -->
+                <groupArtifact>${spotless.java-format.groupArtifact}</groupArtifact>
               </palantirJavaFormat>
               <removeUnusedImports />
               <importOrder>
@@ -973,6 +980,17 @@ limitations under the License.
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <!-- open-java-format needs JDK 21; palantir-java-format formats the same way on JDK 17 -->
+      <id>java17</id>
+      <activation>
+        <jdk>[17,21)</jdk>
+      </activation>
+      <properties>
+        <spotless.java-format.groupArtifact>com.palantir.javaformat:palantir-java-format</spotless.java-format.groupArtifact>
+        <spotless.java-format.version>${version.palantir-java-format}</spotless.java-format.version>
+      </properties>
     </profile>
     <profile>
       <id>format-check</id>
