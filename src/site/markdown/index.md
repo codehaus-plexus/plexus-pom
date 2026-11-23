@@ -39,7 +39,8 @@ To use annotation processing, turn it on deliberately in your own POM.
 
 The `maven-enforcer-plugin` plugin fails the build on a Maven version below the minimum and on a JDK below
 the baseline. Through `extra-enforcer-rules`, it also fails on any dependency containing bytecode newer
-than your compiler target.
+than your compiler target. This includes the classes of other modules in the same build when
+they have not been packaged yet, for example in `mvn test`.
 
 That last rule surprises people. A dependency compiled for a later JDK than you target fails the build
 rather than the application.
